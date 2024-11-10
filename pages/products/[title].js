@@ -2,6 +2,7 @@
 import { Product } from "@/models/Product";
 import { mongooseConnect } from "@/lib/mongoose";
 import { slugify } from "@/utils/slugify"; 
+import Image from "next/image";
 
 export default function ProductDetails({ product }) {
   if (!product) return <div>Product not found</div>;
@@ -9,7 +10,11 @@ export default function ProductDetails({ product }) {
   return (
     <div>
       <h1>{product.title}</h1>
-      <img src={product.images[0]} />
+      <Image 
+      src={product.images[0]} 
+      width={500}
+      height={500}
+      alt="product image" />
       <p>{product.description}</p>
       <p>{product.price}</p>
     </div>

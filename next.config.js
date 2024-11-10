@@ -2,9 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['moto-rental.s3.amazonaws.com'],
+    domains: ['auto-dily.s3.amazonaws.com', 'moto-rental.s3.amazonaws.com'],
   },
 };
 
-export default nextConfig;
-
+module.exports = nextConfig;

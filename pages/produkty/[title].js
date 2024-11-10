@@ -8,7 +8,7 @@ export default function ProductDetails({ product }) {
   if (!product) return <div>Product not found</div>;
 
   return (
-    <div>
+    <div className="bg-white dark:bg-black text-black dark:text-white">
       <h1>{product.title}</h1>
       <Image 
       src={product.images[0]} 

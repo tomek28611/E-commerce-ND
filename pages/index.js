@@ -1,16 +1,10 @@
-// import Header from "@/components/Header";
-// import Featured from "@/components/Featured";
+
 import { Product } from "@/models/Product";
 import { mongooseConnect } from "@/lib/mongoose";
 import NewProducts from "@/components/NewProducts";
 import { useState, useEffect } from "react";
-// import Footer from "@/components/Footer";
-// import ButtonsGroup from "@/components/ButtonsGroup";
-// import styled from "styled-components";
 import Head from "next/head";
-// import TextMain from "@/components/TextMain";
-// import NewPromo from "@/components/NewPromo";
-
+import Models from "@/components/Models";
 
 
 export default function HomePage({ featuredProduct, newProducts }) {
@@ -50,9 +44,10 @@ export default function HomePage({ featuredProduct, newProducts }) {
         <meta name="twitter:description" content="Nabízíme motorové díly, prvky karoserie, elektrické součástky a další. Rychlá dodávka"></meta>
 
       </Head>
-      <div className="main-container">
+      <div className="bg-white dark:bg-black text-black dark:text-white">
 
       <div id="new-products">
+        <Models />
         <NewProducts products={newProducts}  />
       </div>
 
@@ -65,7 +60,7 @@ export async function getServerSideProps() {
   const featuredProductId = '640de2b12aa291ebdf213d48';
   await mongooseConnect();
   const featuredProduct = await Product.findById(featuredProductId);
-  const newProducts = await Product.find({}, null, { sort: { '_id': -1 }});
+  const newProducts = await Product.find({}, null, { sort: { '_id': -1 }, limit: 10});
   return {
     props: {
       featuredProduct: JSON.parse(JSON.stringify(featuredProduct)),

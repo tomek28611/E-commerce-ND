@@ -1,21 +1,19 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Globalne style dla ciała */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-white text-black;
+}
+
+/* Style dla trybu ciemnego */
+body.dark {
+  @apply bg-gray-900 text-white;
+}
+
+/* Możesz też dodać style ciemnego trybu do innych elementów */
+a {
+  @apply text-blue-600 dark:text-blue-400;
 }

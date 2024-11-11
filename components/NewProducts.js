@@ -5,7 +5,7 @@ import Image from "next/image";
 import ButtonsGroup from "@/components/ButtonsGroup";
 import MainArticle from "@/components/MainArticle";
 
-export default function NewProducts({ products }) {
+export default function NewProducts({ products, productF }) {
     const [isLoading, setIsLoading] = useState(false);
     const router = useRouter();
 
@@ -29,13 +29,14 @@ export default function NewProducts({ products }) {
                         
                         <ButtonsGroup />
                     </div>
+                    
                     <h2 className="font-manrope font-bold text-2xl text-black dark:text-slate-400 mb-8 max-xl:text-center">Nedávno přidáno</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 gap-8">
                         {products.map((product) => (
                             <div key={product._id} onClick={() => handleNavigation(product.title)}
                                 className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
 
-                                <Image className="rounded-2xl object-cover" src={product.images[0]} width={200} height={200} />
+                                <Image className="rounded-2xl object-cover product_image" src={product.images[0]} width={150} height={300} />
                                 <div
                                     className="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-slate-300 bg-opacity-50 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-indigo-50">
                                     <div className="flex items-center justify-between mb-2">

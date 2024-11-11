@@ -41,7 +41,8 @@ export default function MercedesModels({ products }) {
     
       
       <div className="">
-        <div className="ml-2 mb-4">Vyberte model</div>
+        
+        <div className="ml-2 mb-4 w-1/1 md:w-1/4 text-center">Vyberte model Mercedes-Benz</div>
         {models.map((model) => (
           <div 
             key={model.class} 

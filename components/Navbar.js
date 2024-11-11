@@ -5,6 +5,7 @@ export default function Navbar({ toggleTheme, theme }) {
   return (
     <nav className="flex items-center justify-between p-4 shadow-md bg-slate-200 dark:bg-gray-800">
       {/* Logo */}
+      
       <div className="text-2xl font-bold text-black dark:text-white">
         <Link href="/">
           <div className="hover:text-blue-500">Logo</div>
@@ -36,7 +37,7 @@ export default function Navbar({ toggleTheme, theme }) {
       </ul>
 
     
-      <div className="flex items-center space-x-4 ">
+      <div className="hidden md:flex items-center space-x-4  ">
         <input
           type="text"
           placeholder="Search..."

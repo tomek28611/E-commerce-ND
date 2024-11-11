@@ -3,17 +3,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Globalne style dla ciała */
+
 body {
   @apply bg-white text-black;
 }
 
-/* Style dla trybu ciemnego */
+
 body.dark {
   @apply bg-gray-900 text-white;
 }
 
-/* Możesz też dodać style ciemnego trybu do innych elementów */
+
 a {
   @apply text-blue-600 dark:text-blue-400;
+}
+
+.center {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
 }

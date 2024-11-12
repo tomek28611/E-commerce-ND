@@ -7,6 +7,7 @@ import Head from "next/head";
 import Models from "@/components/Models";
 
 
+
 export default function HomePage({ featuredProduct, newProducts }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -51,6 +52,7 @@ export default function HomePage({ featuredProduct, newProducts }) {
           <div className="new_prod_cont">
             <NewProducts products={newProducts} productF={featuredProduct} />
           </div>
+          
         </div>
 
       </div>

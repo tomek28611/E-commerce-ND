@@ -41,6 +41,29 @@ a {
   border-radius: 25px;
 }
 
+.product_image_models {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;  
+  align-items: center;
+  
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  background-size: cover;
+  background-position: center;
+  height: 320px;
+  width: 320px;
+  position: relative;
+   
+  border-radius: 25px;
+}
+
 .center {
   max-width: 850px;
   margin: 0 auto;
@@ -64,6 +87,7 @@ a {
   gap: 30px;
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr ;
+    
   }
 }
 

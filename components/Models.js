@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Link from "next/link";
 import Spinner from "@/components/Spinner"; 
 
 const models = [
@@ -18,18 +18,26 @@ const models = [
   { class: "CLS-Trida", variants: ["W218", "W257"], image: "./cls.webp" },
   { class: "B-Trida", variants: ["W246", "W247"], image: "./b.webp" },
   { class: "SL-Trida", variants: ["R232", "R231", "R230"], image: "./sl.webp" },
-]; 
+];
 
 const sortedModels = models.sort((a, b) => a.class.localeCompare(b.class));
 
 export default function MercedesModels({ products }) {
-  const router = useRouter();
   const [loading, setLoading] = useState(false); 
 
-  const handleModelClick = (className) => {
+
+  const handleModelClick = () => {
     setLoading(true); 
-    router.push(`/mercedes-benz/${className}`);
   };
+
+ 
+  useEffect(() => {
+    if (loading) {
+      
+      const timer = setTimeout(() => setLoading(false), 1000);
+      return () => clearTimeout(timer); 
+    }
+  }, [loading]);
 
   return (
     <>
@@ -38,22 +46,25 @@ export default function MercedesModels({ products }) {
           <Spinner />
         </div>
       )}
-    
-      
+
       <div className="">
-        
         <div className="ml-2 mb-4 w-1/1 md:w-1/4 text-center">Vyberte model Mercedes-Benz</div>
-        {models.map((model) => (
-          <div 
-            key={model.class} 
-            onClick={() => handleModelClick(model.class)} 
-             className="w-1/1 md:w-1/4 mb-4 ml-2 relative  p-6 border border-gray-300 rounded-lg text-center cursor-pointer transition-all duration-300 hover:brightness-75"
-            
-            style={{ backgroundImage: `url(${model.image})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '200px' }}
-          >
-            <h3 className="text-white font-bold">{model.class}</h3>
-            <p className="text-white">{`Modele: ${model.variants.join(", ")}`}</p>
-          </div>
+        {sortedModels.map((model) => (
+          <Link key={model.class} href={`/mercedes-benz/${model.class}`}>
+            <div 
+              onClick={handleModelClick} 
+              className="w-1/1 md:w-1/4 mb-4 ml-2 relative p-6 border border-gray-300 rounded-lg text-center cursor-pointer transition-all duration-300 hover:brightness-75"
+              style={{
+                backgroundImage: `url(${model.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                height: '200px',
+              }}
+            >
+              <h3 className="text-white font-bold">{model.class}</h3>
+              <p className="text-white">{`Modele: ${model.variants.join(", ")}`}</p>
+            </div>
+          </Link>
         ))}
       </div>
     </>

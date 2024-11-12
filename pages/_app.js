@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import '../styles/globals.css';
+import Footer from "@/components/Footer";
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState('dark');
@@ -36,6 +37,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Navbar toggleTheme={toggleTheme} theme={theme} />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }

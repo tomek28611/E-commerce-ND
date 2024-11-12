@@ -47,7 +47,8 @@ export default function MercedesModels({ products }) {
           <div 
             key={model.class} 
             onClick={() => handleModelClick(model.class)} 
-            className="w-1/1 md:w-1/4 mb-4 ml-2 relative  p-6 border border-gray-300 rounded-lg text-center cursor-pointer transition-all duration-300 hover:brightness-75"
+             className="w-1/1 md:w-1/4 mb-4 ml-2 relative  p-6 border border-gray-300 rounded-lg text-center cursor-pointer transition-all duration-300 hover:brightness-75"
+            
             style={{ backgroundImage: `url(${model.image})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '200px' }}
           >
             <h3 className="text-white font-bold">{model.class}</h3>

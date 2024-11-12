@@ -34,7 +34,7 @@ export default function Buttons({ setMenuOpen }) {
     <header className="text-center items-center mb-3">
     
         <div className="flex justify-between py-6">
-          <nav className="grid grid-cols-2 gap-4 md:grid-cols-8 md:gap-4">
+          <nav className="hidden xl:grid grid-cols-2 gap-4 md:grid-cols-8 md:gap-4">
           
             <div 
               className="flex flex-col justify-end items-center bg-gray-800 text-white text-center p-2 rounded-lg cursor-pointer transition-all ease-in-out duration-300 h-24 w-24 bg-cover bg-center relative hover:bg-gray-600"

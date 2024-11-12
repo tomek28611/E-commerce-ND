@@ -1,8 +1,10 @@
+
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+
 export default function Spinner() {
-    return (
-      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full overflow-hidden animate-spin">
-        <img src="/wheel.jpg" alt="Loading..." className="w-full h-full object-contain" />
-      </div>
-    );
-  }
-  
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <AiOutlineLoading3Quarters className="text-white animate-spin text-5xl" />
+    </div>
+  );
+}

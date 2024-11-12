@@ -5,16 +5,6 @@ import ProductsGrid from "@/components/ProductsGrid"
 import Head from "next/head";
 
 
-const seoTextContent = `
-  Vítejte na naší stránce zaměřené na <strong>náhradní díly pro automobily Mercedes A třídy</strong>. 
-  Nabízíme široký sortiment kvalitních autodílů, které splňují nejvyšší standardy kvality a spolehlivosti. 
-  Mezi naše produkty patří motorové díly, brzdové součástky, karosářské prvky a další klíčové komponenty potřebné pro opravy a údržbu vašeho vozu.
-
-  Díky naší rychlé dodávce a výhodným cenám si můžete být jisti, že naleznete přesně to, co potřebujete. 
-  Naším cílem je poskytnout vám prvotřídní zákaznický servis a pomoci vám udržet vaše auto v perfektním stavu. 
-  Objevte naši nabídku a vyberte si z našich produktů, které jsou ideální pro všechny modely Mercedes A třídy.
-`;
-
 export default function ProductsPage({ products }) {
     return (
         <>

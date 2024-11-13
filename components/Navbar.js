@@ -20,8 +20,8 @@ export default function Navbar({ toggleTheme, theme }) {
           </Link>
         </li>
         <li>
-          <Link href="/">
-            <div className="text-black dark:text-white hover:text-blue-500">Home</div>
+          <Link href="/mercedes-benz/vsechny-autodily">
+            <div className="text-black dark:text-white hover:text-blue-500">Všechny autodíly</div>
           </Link>
         </li>
         <li>

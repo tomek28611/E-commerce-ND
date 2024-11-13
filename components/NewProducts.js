@@ -13,7 +13,7 @@ export default function NewProducts({ products, productF }) {
     const handleNavigation = (title) => {
         const urlTitle = slugify(title);
         setIsLoading(true);
-        router.push(`/produkty/${urlTitle}`).then(() => setIsLoading(false));
+        router.push(`/autodil/${urlTitle}`).then(() => setIsLoading(false));
     };
 
     return (

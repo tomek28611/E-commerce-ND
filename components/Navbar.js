@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaMoon, FaSun } from 'react-icons/fa';
 import Link from 'next/link';
 import Spinner from "@/components/Spinner";
@@ -8,14 +8,22 @@ export default function Navbar({ toggleTheme, theme }) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  
-  const handleRouteChangeStart = () => setLoading(true);
-  const handleRouteChangeComplete = () => setLoading(false);
+  useEffect(() => {
+    // Dodajemy nasłuchiwacze zdarzeń po zamontowaniu komponentu
+    const handleRouteChangeStart = () => setLoading(true);
+    const handleRouteChangeComplete = () => setLoading(false);
 
- 
-  router.events.on('routeChangeStart', handleRouteChangeStart);
-  router.events.on('routeChangeComplete', handleRouteChangeComplete);
-  router.events.on('routeChangeError', handleRouteChangeComplete);
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+    router.events.on('routeChangeError', handleRouteChangeComplete);
+
+    // Usuwamy nasłuchiwacze po odmontowaniu komponentu
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+      router.events.off('routeChangeError', handleRouteChangeComplete);
+    };
+  }, [router]);
 
   return (
     <nav className="flex items-center justify-between p-4 shadow-md bg-slate-200 dark:bg-gray-800">

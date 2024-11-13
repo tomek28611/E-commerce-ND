@@ -85,7 +85,7 @@ export default function Buttons({ setMenuOpen }) {
             </div>
             <div 
               className="flex flex-col justify-end items-center bg-gray-800 text-white text-center p-2 rounded-lg cursor-pointer transition-all ease-in-out duration-300 h-24 w-24 bg-cover bg-center relative hover:bg-gray-600"
-              style={{ backgroundImage: "url('/miech.webp')" }}
+              style={{ backgroundImage: "url('')" }}
               onClick={() => handleNavigation('https://www.autodilyexpress.cz/airmatic')}
             >
               <span className="bg-black bg-opacity-60 text-white p-1 w-full text-center absolute bottom-0 rounded-b-lg">Nové a repasované vzduchove pérování</span>

@@ -9,7 +9,7 @@ export default function Navbar({ toggleTheme, theme }) {
   const router = useRouter();
 
   useEffect(() => {
-    // Dodajemy nasłuchiwacze zdarzeń po zamontowaniu komponentu
+    //  nasłuchiwacze zdarzeń po zamontowaniu komponentu
     const handleRouteChangeStart = () => setLoading(true);
     const handleRouteChangeComplete = () => setLoading(false);
 
@@ -17,7 +17,7 @@ export default function Navbar({ toggleTheme, theme }) {
     router.events.on('routeChangeComplete', handleRouteChangeComplete);
     router.events.on('routeChangeError', handleRouteChangeComplete);
 
-    // Usuwamy nasłuchiwacze po odmontowaniu komponentu
+    //  nasłuchiwacze po odmontowaniu komponentu
     return () => {
       router.events.off('routeChangeStart', handleRouteChangeStart);
       router.events.off('routeChangeComplete', handleRouteChangeComplete);
@@ -51,12 +51,12 @@ export default function Navbar({ toggleTheme, theme }) {
           </Link>
         </li>
         <li>
-          <Link href="/podpora">
+          <Link href="https://www.autodilyexpress.cz/podpora">
             <div className="text-black dark:text-white hover:text-blue-500">Podpora</div>
           </Link>
         </li>
         <li>
-          <Link href="/kontakt">
+          <Link href="/">
             <div className="text-black dark:text-white hover:text-blue-500">Kontakt</div>
           </Link>
         </li>

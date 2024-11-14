@@ -64,6 +64,34 @@ a {
   border-radius: 25px;
 }
 
+.product_image_models_new {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;  
+  align-items: center;
+  
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  background-size: cover;
+  background-position: center;
+  height: 220px;
+  width: 220px;
+  position: relative; 
+  border-radius: 25px;
+}
+@media (max-width: 768px) {
+  .product_image_models_new {
+    height: 320px;
+    width: 320px;
+  }
+}
+
 .center {
   max-width: 850px;
   margin: 0 auto;

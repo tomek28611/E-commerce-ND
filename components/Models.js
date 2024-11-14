@@ -48,6 +48,8 @@ export default function MercedesModels({ products }) {
       )}
 
       <div className="">
+      <h2 className="md:hidden text-center font-manrope font-bold text-2xl  text-black dark:text-slate-400 mb-8 max-xl:text-center">Originální náhradní díly pro Mercedes-Benz</h2>
+
         <div className="ml-2 mb-4 w-1/1 md:w-1/4 text-center">Vyberte model Mercedes-Benz</div>
         {sortedModels.map((model) => (
           <Link key={model.class} href={`/mercedes-benz/${model.class}`}>

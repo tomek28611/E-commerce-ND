@@ -2,7 +2,7 @@
 import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/Product";
 import ProductsGrid from "@/components/ProductsGrid"
-import Head from "next/head";
+import Head from "next/head"; 
 
 
 export default function ProductsPage({ products }) {

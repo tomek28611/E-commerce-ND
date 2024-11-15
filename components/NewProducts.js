@@ -37,7 +37,7 @@ export default function NewProducts({ products, productF }) {
                              <div key={product._id} onClick={() => handleNavigation(product.title)}
                              className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
  
-                             <Image className="rounded-2xl object-cover product_image_models_new" src={product.images[0]} width={300} height={300} />
+                             <Image className="rounded-2xl object-cover product_image_models_new" src={product.images[0]} width={300} height={300} alt="fotka produktu" />
                              <div className="relative group">
  
                                  <div

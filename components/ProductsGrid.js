@@ -86,9 +86,9 @@ export default function ProductsGrid({ products }) {
                                         {product.title}
                                     </p>
                                 </div>
-                                <div className="product-card block md:hidden dark:text-white">
+                                <div className="product-card block md:hidden dark:text-white text-center">
                                     <p className="product-name">{product.title}</p>
-                                    <p className="product-price">CZK {product.price}</p>
+                                    <p className="product-price">{product.price} Kč</p>
                                 </div>
 
                             </div>

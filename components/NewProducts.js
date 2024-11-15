@@ -23,7 +23,7 @@ export default function NewProducts({ products, productF }) {
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-12">
                     <h1 className="text-center font-manrope font-bold text-2xl  text-black dark:text-slate-400 mb-8 max-xl:text-center">Originální náhradní díly pro Mercedes-Benz</h1>
                     <h2 className="text-center mb-4 dark:text-slate-400">
-                        Nabízíme<br />
+                        Nabízíme:<br />
 
                     </h2>
                     <div className="">

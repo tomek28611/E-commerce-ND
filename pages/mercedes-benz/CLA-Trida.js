@@ -39,51 +39,64 @@ export default function ProductsPage({ products }) {
                 <h1 className="text-center mb-4 font-manrope font-bold text-2xl dark:text-slate-200">Náhradní díly pro model Mercedes-Benz Třída-CLA</h1>
                 <ProductsGrid products={products} />
             </div>
-            <section className="bg-gray-300 text-gray-800 p-6 rounded-lg shadow-lg  mx-auto">
-                <h2 className="text-3xl font-bold text-center text-blue-900 mb-4">
-                    Náhradní díly pro Mercedes-Benz třídy CLA
-                </h2>
-                <p className="mb-4">
-                    Mercedes-Benz třídy A je kompaktní automobil vyráběný německou automobilkou Mercedes-Benz. První generace byla uvedena na trh v roce 1997, a od té doby se stala jedním z nejoblíbenějších modelů v segmentu prémiových malých vozů. Třída A se vyznačuje moderním designem, pokročilými technologiemi a vysokou úrovní komfortu.
-                </p>
+             {
 
-                <h3 className="text-2xl font-semibold text-blue-700 mb-3">
-                    Historie Mercedes-Benz třídy A
-                </h3>
-                <p className="mb-4">
-                    Historie třídy A začala v roce 1997, kdy Mercedes-Benz představil svůj první model této řady. Třída A byla navržena jako malý hatchback s vysokým komfortem a bezpečností, což se stalo charakteristickým znakem této modelové řady. V průběhu let prošla několika generacemi, každá z nich přinesla inovace v designu, technologiích a motorech.
-                </p>
-                <p className="mb-4">
-                    První generace třídy A byla známá svým jedinečným designem a revolučním konceptem, který zahrnoval kompaktní rozměry a vysokou bezpečnostní úroveň. Druhá generace přinesla sportovnější vzhled, zatímco třetí a čtvrtá generace se zaměřily na moderní a luxusní prvky, které odpovídaly požadavkům dnešních zákazníků.
-                </p>
+                <section className="bg-gray-300 text-gray-800 p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
+                    <h2 className="text-3xl font-bold text-center text-blue-900 mb-4">
+                        Mercedes-Benz třídy CLA
+                    </h2>
 
-                <h3 className="text-2xl font-semibold text-blue-700 mb-3">
-                    Silní motory a variabilní karoserie
-                </h3>
-                <p className="mb-4">
-                    Mercedes-Benz třídy A je známý širokou nabídkou motorů, které vyhovují různým požadavkům zákazníků. Zákazníci mohou vybírat mezi benzinovými, naftovými motory i hybridními verzemi, které nabízejí kombinaci výkonu a úspornosti. Výkon motorů se pohybuje od 100 do více než 400 koní v závislosti na modelu a verzi.
-                </p>
-                <p className="mb-4">
-                    Co se týče karoserie, třída A je k dispozici nejen jako hatchback, ale i jako sedán, což rozšiřuje možnosti výběru pro různé typy zákazníků. Tento model je známý svou sportovností, ale zároveň poskytuje komfortní jízdu, což je ideální pro každodenní použití.
-                </p>
+                    <h3 className="text-2xl font-semibold text-blue-700 mb-3">Historie</h3>
+                    <p className="mb-4">
+                        Mercedes-Benz třídy CLA byl poprvé představen v roce 2013 jako sportovnější a kompaktnější alternativa k tradiční třídě C.
+                        Model byl navržen tak, aby přilákal mladší zákazníky díky modernímu designu, výkonným motorům a pokročilým technologiím.
+                        CLA byl jedním z prvních modelů Mercedesu dostupných ve formě čtyřdveřového kupé, které se stalo charakteristickým rysem této třídy.
+                    </p>
 
-                <h3 className="text-2xl font-semibold text-blue-700 mb-3">
-                    Mercedes-Benz třídy A: Vynikající technologie a bezpečnost
-                </h3>
-                <p className="mb-4">
-                    Mercedes-Benz třídy A vždy kladl důraz na inovace a technologie. Moderní modely jsou vybaveny nejnovějšími asistenty pro řidiče, pokročilými systémy infotainmentu a bezpečnostními technologiemi, které zahrnují automatické nouzové brzdění, adaptivní tempomat a další.
-                </p>
-                <p className="mb-4">
-                    Tento model také disponuje inovativními motory, které jsou nejen výkonné, ale také úsporné a ekologické. Díky těmto technologiím a designu se třída A stala symbolem moderního a luxusního auta pro každodenní použití.
-                </p>
+                    <h3 className="text-2xl font-semibold text-blue-700 mb-3">Modely a generace</h3>
+                    <ul className="list-disc list-inside mb-4">
+                        <li><strong>C117 (2013–2019):</strong> První generace, která sdílela platformu s třídou A. K dispozici byla i sportovní verze AMG.</li>
+                        <li><strong>C118 (2019–současnost):</strong> Druhá generace s výrazně modernizovaným interiérem, lepší aerodynamikou a pokročilými technologiemi.</li>
+                    </ul>
 
-                <h3 className="text-2xl font-semibold text-blue-700 mb-3">
-                    Mercedes-Benz třídy A: Záruka kvality
-                </h3>
-                <p>
-                    Mercedes-Benz třídy A je synonymem pro kvalitu a spolehlivost. Tento model kombinuje výkon, styl a technologické inovace, které přitahují širokou škálu zákazníků. Ať už jde o městské dojíždění nebo dlouhé cesty, třída A nabízí vše, co si můžete přát od moderního luxusního automobilu.
-                </p>
-            </section>
+                    <h3 className="text-2xl font-semibold text-blue-700 mb-3">Používané motory</h3>
+                    <p className="mb-4">
+                        Mercedes-Benz třídy CLA je nabízen s širokou škálou motorů, od benzínových čtyřválců po výkonné AMG varianty.
+                        Mezi nejčastější patří:
+                    </p>
+                    <ul className="list-disc list-inside mb-4">
+                        <li>Benzínové: 1.3L, 2.0L (např. CLA 200, CLA 250).</li>
+                        <li>Dieselové: 1.5L, 2.0L (např. CLA 200d, CLA 220d).</li>
+                        <li>AMG: Výkonné verze jako CLA 35 AMG a CLA 45 AMG s výkonem přes 300 koní.</li>
+                    </ul>
+
+                    <h3 className="text-2xl font-semibold text-blue-700 mb-3">Technické údaje a rozměry</h3>
+                    <p className="mb-4">
+                        Typické technické údaje pro aktuální generaci (C118) jsou:
+                    </p>
+                    <ul className="list-disc list-inside mb-4">
+                        <li>Délka: 4688 mm</li>
+                        <li>Šířka: 1830 mm</li>
+                        <li>Výška: 1439 mm</li>
+                        <li>Rozvor: 2729 mm</li>
+                        <li>Objem kufru: 460 litrů</li>
+                    </ul>
+
+                    <h3 className="text-2xl font-semibold text-blue-700 mb-3">Jak pečovat o Mercedes třídy CLA</h3>
+                    <p className="mb-4">
+                        Aby váš Mercedes třídy CLA zůstal ve skvělém stavu, doporučujeme:
+                    </p>
+                    <ul className="list-disc list-inside mb-4">
+                        <li>Pravidelně měnit olej a filtry podle servisního plánu.</li>
+                        <li>Udržovat čistotu karoserie a interiéru, především v zimě kvůli soli.</li>
+                        <li>Kontrolovat stav pneumatik a správný tlak.</li>
+                        <li>Pravidelně aktualizovat software a diagnostiku u autorizovaného servisu.</li>
+                        <li>Ochránit lak pomocí vosků nebo keramických povlaků.</li>
+                    </ul>
+                </section>
+
+            }
+
         </>
     );
 }

@@ -34,6 +34,31 @@ export default function MercedesText() {
       <p>
         Mercedes-Benz je značka, která ráda – do jisté míry – překvapuje. Každý rok jde o nečekanou premiéru, která hlasitě zní téměř celý svět. Výrobce chystá na příští veletrh šakmoudemo překvapení, které nejspíš všem připomene, že značka Mercedes-Benz je luxus, který zastarává.
       </p>
+
+      <h3 className="text-2xl font-semibold text-blue-700 mb-3">
+        Péče o vašeho Mercedes-Benz
+      </h3>
+      <p className="mb-4">
+        Aby váš Mercedes-Benz dlouho vydržel a poskytoval vám radost z jízdy, je důležitá pravidelná údržba. Doporučujeme dodržovat servisní intervaly stanovené výrobcem a svěřit vůz do rukou odborníků.
+      </p>
+      <p className="mb-4">
+        **Mezi základní úkony patří:**
+        <ul>
+          <li>Pravidelná výměna motorového oleje a filtrů</li>
+          <li>Kontrola a případná výměna brzdových destiček a kotoučů</li>
+          <li>Kontrola a seřízení geometrie</li>
+          <li>Kontrola a doplňování všech provozních kapalin</li>
+        </ul>
+      </p>
+      <p className="mb-4">
+        **V zimě se zaměřte na:**
+        <ul>
+          <li>Použití zimních pneumatik</li>
+          <li>Kontrola stavu akumulátoru</li>
+          <li>Očištění vozidla od sněhu a ledu před jízdou</li>
+          <li>Nosení s sebou zimní výbavy (škrabka, rozmrazovač, sněhové řetězy)</li>
+        </ul>
+      </p>
     </section>
   );
 }

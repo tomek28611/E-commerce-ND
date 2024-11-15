@@ -39,51 +39,64 @@ export default function ProductsPage({ products }) {
                 <h1 className="text-center mb-4 font-manrope font-bold text-2xl dark:text-slate-200">Náhradní díly pro model Mercedes-Benz Třída-S</h1>
                 <ProductsGrid products={products} />
             </div>
-            <section className="bg-gray-300 text-gray-800 p-6 rounded-lg shadow-lg  mx-auto">
+
+            <section className="bg-gray-300 text-gray-800 p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-blue-900 mb-4">
-                    Náhradní díly pro Mercedes-Benz třídy C
+                    Mercedes-Benz třídy S
                 </h2>
+
+                <h3 className="text-2xl font-semibold text-blue-700 mb-3">Historie</h3>
                 <p className="mb-4">
-                    Mercedes-Benz třídy A je kompaktní automobil vyráběný německou automobilkou Mercedes-Benz. První generace byla uvedena na trh v roce 1997, a od té doby se stala jedním z nejoblíbenějších modelů v segmentu prémiových malých vozů. Třída A se vyznačuje moderním designem, pokročilými technologiemi a vysokou úrovní komfortu.
+                    Mercedes-Benz třídy S je vlajková loď mezi luxusními vozy německého výrobce, představená poprvé v roce 1972. Třída S vždy představovala špičkové technologie, nejvyšší komfort a inovace v oblasti bezpečnosti. S každou novou generací přináší tento model řadu průkopnických prvků, které později pronikají do celého automobilového průmyslu.
                 </p>
 
-                <h3 className="text-2xl font-semibold text-blue-700 mb-3">
-                    Historie Mercedes-Benz třídy A
-                </h3>
-                <p className="mb-4">
-                    Historie třídy A začala v roce 1997, kdy Mercedes-Benz představil svůj první model této řady. Třída A byla navržena jako malý hatchback s vysokým komfortem a bezpečností, což se stalo charakteristickým znakem této modelové řady. V průběhu let prošla několika generacemi, každá z nich přinesla inovace v designu, technologiích a motorech.
-                </p>
-                <p className="mb-4">
-                    První generace třídy A byla známá svým jedinečným designem a revolučním konceptem, který zahrnoval kompaktní rozměry a vysokou bezpečnostní úroveň. Druhá generace přinesla sportovnější vzhled, zatímco třetí a čtvrtá generace se zaměřily na moderní a luxusní prvky, které odpovídaly požadavkům dnešních zákazníků.
-                </p>
+                <h3 className="text-2xl font-semibold text-blue-700 mb-3">Modely a generace</h3>
+                <ul className="list-disc list-inside mb-4">
+                    <li><strong>W116 (1972–1980):</strong> První generace s průkopnickými prvky v oblasti bezpečnosti a komfortu.</li>
+                    <li><strong>W126 (1979–1991):</strong> Úspěšný model s elegantním designem a lepší aerodynamikou.</li>
+                    <li><strong>W140 (1991–1998):</strong> Luxusní model s pokročilými technologiemi, jako jsou dvojitá okna.</li>
+                    <li><strong>W220 (1998–2005):</strong> Modernizovaný design s novými elektronickými prvky.</li>
+                    <li><strong>W221 (2005–2013):</strong> Technologie jako DISTRONIC a Night Vision.</li>
+                    <li><strong>W222 (2013–2020):</strong> Model s inovativními prvky jako Magic Body Control.</li>
+                    <li><strong>W223 (2020–současnost):</strong> Nejnovější generace s rozšířenou realitou a elektrifikovanými motory.</li>
+                </ul>
 
-                <h3 className="text-2xl font-semibold text-blue-700 mb-3">
-                    Silní motory a variabilní karoserie
-                </h3>
+                <h3 className="text-2xl font-semibold text-blue-700 mb-3">Používané motory</h3>
                 <p className="mb-4">
-                    Mercedes-Benz třídy A je známý širokou nabídkou motorů, které vyhovují různým požadavkům zákazníků. Zákazníci mohou vybírat mezi benzinovými, naftovými motory i hybridními verzemi, které nabízejí kombinaci výkonu a úspornosti. Výkon motorů se pohybuje od 100 do více než 400 koní v závislosti na modelu a verzi.
+                    Třída S nabízí širokou škálu motorů, které zahrnují benzínové, dieselové a hybridní jednotky:
                 </p>
-                <p className="mb-4">
-                    Co se týče karoserie, třída A je k dispozici nejen jako hatchback, ale i jako sedán, což rozšiřuje možnosti výběru pro různé typy zákazníků. Tento model je známý svou sportovností, ale zároveň poskytuje komfortní jízdu, což je ideální pro každodenní použití.
-                </p>
+                <ul className="list-disc list-inside mb-4">
+                    <li>Benzínové: 3.0L V6, 4.0L V8 twin-turbo, 6.0L V12 pro modely AMG.</li>
+                    <li>Dieselové: 3.0L řadový šestiválec.</li>
+                    <li>Hybridní: Plug-in hybridní verze s elektrickým dojezdem až 100 km.</li>
+                </ul>
 
-                <h3 className="text-2xl font-semibold text-blue-700 mb-3">
-                    Mercedes-Benz třídy A: Vynikající technologie a bezpečnost
-                </h3>
+                <h3 className="text-2xl font-semibold text-blue-700 mb-3">Technické údaje a rozměry</h3>
                 <p className="mb-4">
-                    Mercedes-Benz třídy A vždy kladl důraz na inovace a technologie. Moderní modely jsou vybaveny nejnovějšími asistenty pro řidiče, pokročilými systémy infotainmentu a bezpečnostními technologiemi, které zahrnují automatické nouzové brzdění, adaptivní tempomat a další.
+                    Nejnovější generace W223 nabízí následující specifikace:
                 </p>
-                <p className="mb-4">
-                    Tento model také disponuje inovativními motory, které jsou nejen výkonné, ale také úsporné a ekologické. Díky těmto technologiím a designu se třída A stala symbolem moderního a luxusního auta pro každodenní použití.
-                </p>
+                <ul className="list-disc list-inside mb-4">
+                    <li>Délka: 5179 mm</li>
+                    <li>Šířka: 1954 mm</li>
+                    <li>Výška: 1503 mm</li>
+                    <li>Rozvor: 3106 mm</li>
+                    <li>Hmotnost: cca 2000 kg (v závislosti na modelu)</li>
+                </ul>
 
-                <h3 className="text-2xl font-semibold text-blue-700 mb-3">
-                    Mercedes-Benz třídy A: Záruka kvality
-                </h3>
-                <p>
-                    Mercedes-Benz třídy A je synonymem pro kvalitu a spolehlivost. Tento model kombinuje výkon, styl a technologické inovace, které přitahují širokou škálu zákazníků. Ať už jde o městské dojíždění nebo dlouhé cesty, třída A nabízí vše, co si můžete přát od moderního luxusního automobilu.
+                <h3 className="text-2xl font-semibold text-blue-700 mb-3">Jak pečovat o Mercedes třídy S</h3>
+                <p className="mb-4">
+                    Mercedes-Benz třídy S je sofistikované vozidlo, které vyžaduje pravidelnou péči, aby si udrželo svou výkonnost a luxusní vzhled:
                 </p>
+                <ul className="list-disc list-inside mb-4">
+                    <li>Provádějte pravidelné výměny oleje a filtrů podle doporučení výrobce.</li>
+                    <li>Udržujte systém klimatizace a ventilace pro maximální komfort.</li>
+                    <li>Kontrolujte brzdový systém a pneumatiky, aby byly v perfektním stavu.</li>
+                    <li>Čistěte kožený interiér a chráníte ho před opotřebením.</li>
+                    <li>Servisujte technologické systémy, jako je DISTRONIC a Magic Body Control, v autorizovaných servisech.</li>
+                </ul>
             </section>
+
+
         </>
     );
 }

@@ -39,51 +39,59 @@ export default function ProductsPage({ products }) {
                 <h1 className="text-center mb-4 font-manrope font-bold text-2xl dark:text-slate-200">Náhradní díly Automobilové motory Mercedes Benz</h1>
                 <ProductsGrid products={products} />
             </div>
-            <section className="bg-gray-300 text-gray-800 p-6 rounded-lg shadow-lg  mx-auto">
+
+            <section className="bg-gray-300 text-gray-800 p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-blue-900 mb-4">
-                    Náhradní díly pro Mercedes-Benz třídy A
+                    Technologie motorů Mercedes-Benz
                 </h2>
+
+                <h3 className="text-2xl font-semibold text-blue-700 mb-3">Úvod</h3>
                 <p className="mb-4">
-                    Mercedes-Benz třídy A je kompaktní automobil vyráběný německou automobilkou Mercedes-Benz. První generace byla uvedena na trh v roce 1997, a od té doby se stala jedním z nejoblíbenějších modelů v segmentu prémiových malých vozů. Třída A se vyznačuje moderním designem, pokročilými technologiemi a vysokou úrovní komfortu.
+                    Mercedes-Benz je jednou z nejuznávanějších značek automobilů na světě, která již léta investuje do inovativních technologií motorů. Společnost vyrábí širokou škálu pohonných jednotek, které jsou odpovědné za výkon, sílu a komfort jízdy. Motory Mercedes-Benz jsou synonymem spolehlivosti, síly a ekologičnosti, díky použití nejnovějších technologických řešení. V tomto článku představíme různé technologie motorů používané v automobilech Mercedes-Benz a prozkoumáme jejich konstrukci a fungování.
                 </p>
 
-                <h3 className="text-2xl font-semibold text-blue-700 mb-3">
-                    Historie Mercedes-Benz třídy A
-                </h3>
+                <h3 className="text-2xl font-semibold text-blue-700 mb-3">Typy motorů v Mercedes-Benz</h3>
                 <p className="mb-4">
-                    Historie třídy A začala v roce 1997, kdy Mercedes-Benz představil svůj první model této řady. Třída A byla navržena jako malý hatchback s vysokým komfortem a bezpečností, což se stalo charakteristickým znakem této modelové řady. V průběhu let prošla několika generacemi, každá z nich přinesla inovace v designu, technologiích a motorech.
+                    Mercedes-Benz nabízí různé motory, které se liší výkonem, účinností a typem pohonu. Mezi nejběžnější typy motorů používané v automobilech této značky patří:
                 </p>
-                <p className="mb-4">
-                    První generace třídy A byla známá svým jedinečným designem a revolučním konceptem, který zahrnoval kompaktní rozměry a vysokou bezpečnostní úroveň. Druhá generace přinesla sportovnější vzhled, zatímco třetí a čtvrtá generace se zaměřily na moderní a luxusní prvky, které odpovídaly požadavkům dnešních zákazníků.
-                </p>
+                <ul className="list-disc list-inside mb-4">
+                    <li><strong>Benzínové motory:</strong> Používané v široké škále vozidel, od malých automobilů až po sportovní modely AMG. Tyto motory nabízejí vynikající dynamiku, velký výkon a plynulost chodu.</li>
+                    <li><strong>Dieselové motory:</strong> Známé svou úsporností a dlouhou životností. Jsou běžně používány v modelech s větším točivým momentem, zejména v SUV a limuzínách.</li>
+                    <li><strong>Elektrické a hybridní motory:</strong> Mercedes-Benz také klade důraz na udržitelnost, nabízí vozidla s elektrickým pohonem (EQ) a hybridními technologiemi, které kombinují spalovací motor a elektrický pohon.</li>
+                    <li><strong>Motory AMG:</strong> Motory vyvinuté specialisty Mercedes-AMG, které nabízejí výjimečné výkony a technologie, jako jsou turbodmychadla a systémy správy energie.</li>
+                </ul>
 
-                <h3 className="text-2xl font-semibold text-blue-700 mb-3">
-                    Silní motory a variabilní karoserie
-                </h3>
+                <h3 className="text-2xl font-semibold text-blue-700 mb-3">Konstrukce motorů Mercedes-Benz</h3>
                 <p className="mb-4">
-                    Mercedes-Benz třídy A je známý širokou nabídkou motorů, které vyhovují různým požadavkům zákazníků. Zákazníci mohou vybírat mezi benzinovými, naftovými motory i hybridními verzemi, které nabízejí kombinaci výkonu a úspornosti. Výkon motorů se pohybuje od 100 do více než 400 koní v závislosti na modelu a verzi.
+                    Motory Mercedes-Benz se skládají z mnoha precizně navržených komponent, které zajišťují vysokou kvalitu, spolehlivost a výkon. Zde jsou hlavní části, které tvoří motory této značky:
                 </p>
-                <p className="mb-4">
-                    Co se týče karoserie, třída A je k dispozici nejen jako hatchback, ale i jako sedán, což rozšiřuje možnosti výběru pro různé typy zákazníků. Tento model je známý svou sportovností, ale zároveň poskytuje komfortní jízdu, což je ideální pro každodenní použití.
-                </p>
+                <ul className="list-disc list-inside mb-4">
+                    <li><strong>Motorový blok:</strong> Motorový blok je hlavní částí, která drží všechny ostatní komponenty. Je vyroben z litiny nebo hliníku, aby byla zajištěna lehkost a odolnost. Uvnitř se nacházejí válce, v nichž probíhá spalování palivové směsi.</li>
+                    <li><strong>Válce:</strong> Válce jsou komory, ve kterých probíhá spalování. Mercedes-Benz nabízí motory se 4, 6, 8 a 12 válci, v závislosti na modelu a požadavcích vozidla.</li>
+                    <li><strong>Písty:</strong> Písty se pohybují ve válcích a jsou zodpovědné za přeměnu chemické energie na mechanickou. Písty jsou spojeny s ojnicemi, které přeměňují pohyb pístů na otáčení klikového hřídele.</li>
+                    <li><strong>Klikový hřídel:</strong> Klikový hřídel přeměňuje pohyb pístů na otáčení, což umožňuje pohon vozidla. Klikový hřídel je jednou z nejdůležitějších součástí motoru a je vystaven obrovským zátěžím.</li>
+                    <li><strong>Rozvodový systém:</strong> Rozvodový systém reguluje otevírání a zavírání ventilů ve správných okamžicích. Ventily kontrolují přívod vzduchu a paliva a odvod spalin. Mercedes-Benz používá pokročilé rozvodové systémy, jako je VVT (Variable Valve Timing), které optimalizují výkon.</li>
+                    <li><strong>Turbodmychadlo:</strong> Turbodmychadlo je zodpovědné za zvýšení výkonu motoru tím, že stlačuje vzduch vstupující do válců. Motory AMG a jiné výkonné motory Mercedes-Benz často používají turbodmychadla pro zvýšení účinnosti.</li>
+                    <li><strong>Systém chlazení:</strong> Systém chlazení zajišťuje udržení správné teploty motoru. Systém zahrnuje chladiče, vodní čerpadla a termostaty, které regulují tok chladicí kapaliny.</li>
+                    <li><strong>Palivový systém:</strong> Palivový systém dodává palivo do válců. Mercedes-Benz používá moderní vstřikovače, které přesně dávkují množství paliva, čímž zajišťují optimální směs pro spalování.</li>
+                    <li><strong>Výfukový systém:</strong> Výfukový systém odvádí spaliny z motoru a snižuje emise škodlivých látek. Mercedes-Benz používá pokročilé katalyzátory a filtry pevných částic (DPF) pro splnění ekologických norem.</li>
+                    <li><strong>Elektronika motoru:</strong> Moderní motory Mercedes-Benz jsou vybaveny pokročilou elektronikou, včetně řídicího počítače, senzorů a řídicích systémů motoru (ECU), které optimalizují činnost motoru, řídí emisní parametry a zlepšují výkon.</li>
+                </ul>
 
-                <h3 className="text-2xl font-semibold text-blue-700 mb-3">
-                    Mercedes-Benz třídy A: Vynikající technologie a bezpečnost
-                </h3>
+                <h3 className="text-2xl font-semibold text-blue-700 mb-3">Nové technologie motorů Mercedes-Benz</h3>
                 <p className="mb-4">
-                    Mercedes-Benz třídy A vždy kladl důraz na inovace a technologie. Moderní modely jsou vybaveny nejnovějšími asistenty pro řidiče, pokročilými systémy infotainmentu a bezpečnostními technologiemi, které zahrnují automatické nouzové brzdění, adaptivní tempomat a další.
+                    Mercedes-Benz neustále vyvíjí nové technologie motorů, které zlepšují výkon, úsporu paliva a dopad na životní prostředí. Zde jsou některé z nových technologií používaných v motorech této značky:
                 </p>
-                <p className="mb-4">
-                    Tento model také disponuje inovativními motory, které jsou nejen výkonné, ale také úsporné a ekologické. Díky těmto technologiím a designu se třída A stala symbolem moderního a luxusního auta pro každodenní použití.
-                </p>
-
-                <h3 className="text-2xl font-semibold text-blue-700 mb-3">
-                    Mercedes-Benz třídy A: Záruka kvality
-                </h3>
-                <p>
-                    Mercedes-Benz třídy A je synonymem pro kvalitu a spolehlivost. Tento model kombinuje výkon, styl a technologické inovace, které přitahují širokou škálu zákazníků. Ať už jde o městské dojíždění nebo dlouhé cesty, třída A nabízí vše, co si můžete přát od moderního luxusního automobilu.
-                </p>
+                <ul className="list-disc list-inside mb-4">
+                    <li><strong>Turbodmychadlo:</strong> Mercedes-Benz používá turbodmychadla v mnoha motorech k zvýšení výkonu bez zvětšení objemu motoru.</li>
+                    <li><strong>Hybridizace:</strong> Hybridní technologie umožňují kombinovat spalovací motor s elektrickým, což vede k nižší spotřebě paliva a emisím.</li>
+                    <li><strong>AMG Performance:</strong> Motory AMG jsou navrženy s cílem maximalizovat výkon a efektivitu. Mercedes-AMG používá systémy variabilního časování ventilů, turbodmychadla s vysokým výkonem a pokročilé chladicí systémy.</li>
+                    <li><strong>EQ Power:</strong> Mercedes-Benz zavádí plně elektrické pohony v rámci série EQ. Modely EQ nabízejí vynikající výkon a nulové emise, což zajišťuje dynamickou jízdu bez výfukových plynů.</li>
+                    <li><strong>BlueEFFICIENCY:</strong> Technologie BlueEFFICIENCY ve motorech Mercedes-Benz se zaměřují na snížení spotřeby paliva a emisí CO2, optimalizací spalovacích procesů a zlepšením aerodynamiky vozidel.</li>
+                </ul>
             </section>
+
+
         </>
     );
 }

@@ -10,12 +10,12 @@ export default function ProductsPage({ products }) {
         <>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
-                <title>Náhradní díly pro Mercedes GLC třídy</title>
+                <title>Náhradní díly pro Mercedes GLS třídy</title>
                 <meta
                     name="description"
                     content="Objevte širokou nabídku kvalitních autodílů pro vozy Mercedes. Nabízíme motorové díly, prvky karoserie, elektrické součástky a další. Rychlá dodávka, skvělé ceny a spolehlivý servis. Vaše auto si zaslouží to nejlepší!"
                 />
-                <link rel="cannonical" href="https://www.nahradni-dily.com/mercedes-benz/GLC-Trida" />
+                <link rel="cannonical" href="https://www.nahradni-dily.com/mercedes-benz/GLS-Trida" />
                 <link rel="apple-touch-icon" sizes="180x180" href="https://www.nahradni-dily.com/logo-nerozza.png" />
                 <meta property="og:locale" content="cs_CZ" />
                 <meta property="og:type" content="website" />
@@ -36,59 +36,61 @@ export default function ProductsPage({ products }) {
 
             </Head>
             <div className="dark:bg-slate-700">
-                <h1 className="text-center mb-4 font-manrope font-bold text-2xl dark:text-slate-200">Náhradní díly pro model Mercedes-Benz Třída-GLC</h1>
+                <h1 className="text-center mb-4 font-manrope font-bold text-2xl dark:text-slate-200">Náhradní díly pro model Mercedes-Benz Třída-GLS</h1>
                 <ProductsGrid products={products} />
             </div>
 
             <section className="bg-gray-300 text-gray-800 p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-blue-900 mb-4">
-                    Mercedes-Benz třídy GLC
+                    Mercedes-Benz třídy GLS
                 </h2>
 
                 <h3 className="text-2xl font-semibold text-blue-700 mb-3">Historie</h3>
                 <p className="mb-4">
-                    Mercedes-Benz třídy GLC je kompaktní luxusní SUV, které bylo poprvé představeno v roce 2015. Třída GLC je nástupcem třídy GLK a nabízí modernější design, lepší jízdní vlastnosti a pokročilou technologii. GLC se stal velmi populární volbou mezi zákazníky, kteří hledají kombinaci luxusu, prostornosti a výkonu v SUV.
+                    Mercedes-Benz třídy GLS, často označována jako "královna SUV", je luxusní velké SUV, které bylo poprvé představeno v roce 2006 pod názvem Mercedes-Benz GL. V roce 2015 byla třída GL přejmenována na GLS, aby lépe odrážela její postavení v hierarchii značky, která byla dříve označena jako třída S v segmentu SUV. Třída GLS se stala synonymem pro luxusní výbavu, výkonnost a komfort v kategorii SUV.
                 </p>
 
                 <h3 className="text-2xl font-semibold text-blue-700 mb-3">Modely a generace</h3>
                 <ul className="list-disc list-inside mb-4">
-                    <li><strong>X253 (2015–současnost):</strong> První a současná generace třídy GLC, která byla postavena na platformě třídy C a je k dispozici ve verzích SUV a kupé.</li>
+                    <li><strong>X164 (2006–2012):</strong> První generace třídy GL, která byla později přejmenována na GLS, byla zaměřena na komfort a výkon s kapacitou pro až sedm cestujících.</li>
+                    <li><strong>X166 (2012–2019):</strong> Druhá generace třídy GLS přinesla vylepšený design a větší důraz na technologii, včetně pokročilých asistenčních systémů a luxusního interiéru.</li>
+                    <li><strong>V167 (2019–současnost):</strong> Nejnovější generace třídy GLS přináší ještě více luxusu, moderní technologie a elektrifikované motory, včetně plug-in hybridních verzí.</li>
                 </ul>
 
                 <h3 className="text-2xl font-semibold text-blue-700 mb-3">Používané motory</h3>
                 <p className="mb-4">
-                    Třída GLC nabízí širokou škálu motorů, aby pokryla různé potřeby zákazníků. Mezi dostupné motory patří:
+                    Mercedes-Benz GLS nabízí širokou škálu motorů, včetně benzinových, naftových a hybridních verzí. Mezi motory, které byly k dispozici v různých generacích, patří:
                 </p>
                 <ul className="list-disc list-inside mb-4">
-                    <li>Benzínové: 2.0L čtyřválcové motory, 3.0L šestiválce a verze AMG GLC 43 a GLC 63 s vyšším výkonem.</li>
-                    <li>Dieselové: 2.1L a 2.0L čtyřválcové turbodieselové motory, které nabízejí výbornou spotřebu paliva a dostatečný výkon.</li>
-                    <li>Plug-in hybridní verze (GLC 350 e), která spojuje benzinový motor s elektromotorem pro lepší ekonomiku a nižší emise.</li>
+                    <li>Benzínové motory: 3.0L V6, 4.7L V8, 5.5L V8 a 4.0L V8 twin-turbo (pro verzi AMG).</li>
+                    <li>Dieselové motory: 3.0L V6 turbodiesel a 4.0L V8 turbodiesel pro vysoký točivý moment a efektivitu paliva.</li>
+                    <li>Hybridní motory: 3.0L V6 plug-in hybrid, který kombinuje výkon s nižší spotřebou paliva a nižšími emisemi.</li>
                 </ul>
 
                 <h3 className="text-2xl font-semibold text-blue-700 mb-3">Technické údaje a rozměry</h3>
                 <p className="mb-4">
-                    Nejnovější generace třídy GLC (X253) má následující specifikace:
+                    Třída GLS je známá svými impozantními rozměry a velkorysým prostorem. Některé z hlavních technických specifikací jsou:
                 </p>
                 <ul className="list-disc list-inside mb-4">
-                    <li>Délka: 4656 mm</li>
-                    <li>Šířka: 1890 mm</li>
-                    <li>Výška: 1644 mm</li>
-                    <li>Rozvor: 2873 mm</li>
-                    <li>Hmotnost: cca 1800–2100 kg (v závislosti na modelu)</li>
-                    <li>Kapacita zavazadlového prostoru: 550 litrů (po sklopení zadních sedadel až 1600 litrů)</li>
+                    <li>Délka: 5215 mm</li>
+                    <li>Šířka: 1956 mm</li>
+                    <li>Výška: 1850 mm</li>
+                    <li>Rozvor: 3135 mm</li>
+                    <li>Hmotnost: cca 2500–3000 kg (v závislosti na motoru a výbavě)</li>
+                    <li>Kapacita zavazadlového prostoru: 680 litrů (po sklopení zadních sedadel až 2300 litrů)</li>
                 </ul>
 
-                <h3 className="text-2xl font-semibold text-blue-700 mb-3">Jak pečovat o Mercedes třídy GLC</h3>
+                <h3 className="text-2xl font-semibold text-blue-700 mb-3">Jak pečovat o Mercedes třídy GLS</h3>
                 <p className="mb-4">
-                    Aby Mercedes třídy GLC zůstal v perfektním stavu, doporučujeme následující údržbu:
+                    Mercedes-Benz třídy GLS je luxusní SUV, které si zaslouží pravidelnou péči, aby zachovalo svůj vysoký standard komfortu a výkonu. Následující kroky vám pomohou udržet vaše GLS v perfektním stavu:
                 </p>
                 <ul className="list-disc list-inside mb-4">
-                    <li>Pravidelně kontrolujte hladinu motorového oleje a měňte olej a filtry podle doporučených intervalů.</li>
-                    <li>Udržujte pneumatiky v dobrém stavu a kontrolujte jejich tlak pro zajištění optimální stability a bezpečnosti.</li>
-                    <li>Pravidelně čistěte interiér a ošetřujte čalounění, aby interiér zůstal v dobrém stavu.</li>
-                    <li>V zimě používejte ochranu proti soli a nečistotám na podvozku, abyste předešli korozi.</li>
-                    <li>Provádějte pravidelné kontroly brzdového systému, zejména před zimními měsíci.</li>
-                    <li>Před delšími cestami zkontrolujte stav akumulátoru a úroveň chladicí kapaliny, aby byla zajištěna spolehlivost vozu.</li>
+                    <li>Pravidelně měňte motorový olej a filtry, aby motor běžel hladce a efektivně.</li>
+                    <li>Kontrolujte a udržujte pneumatiky v dobrém stavu. S třídy GLS by měla být vybavena kvalitními pneumatikami, které zajistí bezpečnou jízdu i v náročných podmínkách.</li>
+                    <li>Udržujte karoserii auta čistou a pravidelně ji ošetřujte proti korozi, zejména po zimních měsících.</li>
+                    <li>V zimě je důležité pravidelně kontrolovat baterii a brzdový systém, aby auto bylo připraveno na náročné podmínky. Používejte kvalitní zimní pneumatiky pro maximální trakci.</li>
+                    <li>Pravidelně kontrolujte úroveň chladicí kapaliny, brzdové kapaliny a dalších kapalin, aby všechny systémy fungovaly bez problémů.</li>
+                    <li>Výměna vzduchového a kabinového filtru pro zajištění čistého a zdravého prostředí uvnitř vozu.</li>
                 </ul>
             </section>
 
@@ -101,7 +103,7 @@ export async function getServerSideProps() {
     await mongooseConnect();
     const allProducts = await Product.find({}, null, { sort: { '_id': -1 } });
 
-    const modelNumbers = ["X253", "X254"];
+    const modelNumbers = ["X166", "X167"];
 
     const filteredProducts = allProducts.filter(product =>
         modelNumbers.some(model => product.title.includes(model))

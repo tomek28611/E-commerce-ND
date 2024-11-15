@@ -52,12 +52,12 @@ export default function ProductsPage({ products }) {
         Třída E je známá svou všestranností a inovacemi, a proto zůstává jedním z nejprodávanějších modelů v historii Mercedesu.
       </p>
       <p className="mb-4">
-        Písmeno "E" označuje "Einspritzung" (vstřikování paliva), což bylo v době zavedení třídy průkopnické. Postupem času třída E získala pověst spolehlivosti a luxusu, kterou si drží dodnes.
+        Písmeno E označuje Einspritzung (vstřikování paliva), což bylo v době zavedení třídy průkopnické. Postupem času třída E získala pověst spolehlivosti a luxusu, kterou si drží dodnes.
       </p>
 
       <h3 className="text-2xl font-semibold text-blue-700 mb-3">Modely a generace</h3>
       <ul className="list-disc list-inside mb-4">
-        <li><strong>W120 (1953–1962):</strong> Známý jako "Ponton," první sedan této třídy.</li>
+        <li><strong>W120 (1953–1962):</strong> Známý jako Ponton, první sedan této třídy.</li>
         <li><strong>W124 (1984–1995):</strong> Jeden z nejtrvanlivějších modelů, známý svou kvalitou zpracování.</li>
         <li><strong>W210 (1995–2002):</strong> Inovativní design s oválnými světlomety.</li>
         <li><strong>W213 (2016–současnost):</strong> Nejnovější generace s pokročilými technologiemi a moderním designem.</li>

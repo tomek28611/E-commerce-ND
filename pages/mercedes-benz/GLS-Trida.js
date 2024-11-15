@@ -47,7 +47,7 @@ export default function ProductsPage({ products }) {
 
                 <h3 className="text-2xl font-semibold text-blue-700 mb-3">Historie</h3>
                 <p className="mb-4">
-                    Mercedes-Benz třídy GLS, často označována jako "královna SUV", je luxusní velké SUV, které bylo poprvé představeno v roce 2006 pod názvem Mercedes-Benz GL. V roce 2015 byla třída GL přejmenována na GLS, aby lépe odrážela její postavení v hierarchii značky, která byla dříve označena jako třída S v segmentu SUV. Třída GLS se stala synonymem pro luxusní výbavu, výkonnost a komfort v kategorii SUV.
+                    Mercedes-Benz třídy GLS, často označována jako královna SUV, je luxusní velké SUV, které bylo poprvé představeno v roce 2006 pod názvem Mercedes-Benz GL. V roce 2015 byla třída GL přejmenována na GLS, aby lépe odrážela její postavení v hierarchii značky, která byla dříve označena jako třída S v segmentu SUV. Třída GLS se stala synonymem pro luxusní výbavu, výkonnost a komfort v kategorii SUV.
                 </p>
 
                 <h3 className="text-2xl font-semibold text-blue-700 mb-3">Modely a generace</h3>

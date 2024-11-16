@@ -36,7 +36,7 @@ export default function ProductDetails({ product }) {
         <title>Náhradní díly pro Mercedes-Benz </title>
         <meta
           name="description"
-          content="Objevte širokou nabídku kvalitních autodílů pro vozy Mercedes. Nabízíme motorové díly, prvky karoserie, elektrické součástky a další. Rychlá dodávka, skvělé ceny a spolehlivý servis. Vaše auto si zaslouží to nejlepší!"
+          content="Objevte širokou nabídku autodílů pro Mercedes. Nabízíme motory, prvky karoserie, elektrické součástky a další. Rychlá dodávka, skvělé ceny"
         />
         <link rel="canonical" href={`https://www.nahradni-dily.com/autodil/${slugify(product.title)}`} />
 
@@ -50,7 +50,7 @@ export default function ProductDetails({ product }) {
         <meta property="og:image:height" content="150" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:description" content="Originální náhradní díly pro Mercedes-Benz. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Mercedes-Benz." />
-        <meta property="og:url" content="https://www.nahradni-dily.com/" />
+        <meta property="og:url" content={`https://www.nahradni-dily.com/autodil/${slugify(product.title)}`} />
         <meta property="og:site_name" content="nahradni-dily.com" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Originální náhradní díly pro Mercedes-Benz. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Mercedes-Benz." />

@@ -13,7 +13,7 @@ export default function ProductsPage({ products }) {
                 <title>Části karoserie auta Mercedes Benz | dveře, blatník, nárazník, kapota, chladič, blatníky, lampy</title>
                 <meta
                     name="description"
-                    content="Objevte širokou nabídku kvalitních autodílů pro vozy Mercedes. Prvky karoserie,dveře,blatník,nárazník,schody,kapota,světla,chladič,blatníky,střecha. Rychlá dodávka, skvělé ceny a spolehlivý servis. Vaše auto si zaslouží to nejlepší!"
+                    content="Objevte širokou nabídku kvalitních autodílů pro vozy Mercedes. Prvky karoserie, dveře, blatník, nárazník, kapota, světla, chladič, blatníky, střecha."
                 />
                 <link rel="cannonical" href="https://www.nahradni-dily.com/mercedes-benz/skupina-autodilu/casti-karoserie-auta" />
                 <link rel="apple-touch-icon" sizes="180x180" href="https://www.nahradni-dily.com/logo-nerozza.png" />

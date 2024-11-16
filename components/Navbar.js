@@ -24,7 +24,7 @@ export default function Navbar({ toggleTheme, theme }) {
       router.events.off('routeChangeError', handleRouteChangeComplete);
     };
   }, [router]);
-
+ 
   return (
     <nav className="flex items-center justify-between p-4 shadow-md bg-slate-200 dark:bg-gray-800">
       {loading && (

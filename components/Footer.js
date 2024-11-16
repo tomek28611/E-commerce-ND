@@ -43,14 +43,16 @@ export default function Footer() {
           </div>
           <div class="px-4 my-4 w-full sm:w-auto">
             <div>
-              <h2 class="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">Blog</h2>
+              <h2 class="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">kategorie</h2>
             </div>
             <ul class="leading-8">
-              <li><Link href="#" class="hover:text-blue-400">xxx</Link></li>
-              <li><Link href="#" class="hover:text-blue-400">xxx</Link></li>
-              <li><Link href="#" class="hover:text-blue-400">xxx</Link></li>
-              <li><Link href="#" class="hover:text-blue-400">xxx</Link></li>
-              <li><Link href="#" class="hover:text-blue-400">xxx</Link></li>
+              <li><Link href="https://www.nahradni-dily.com/mercedes-benz/skupina-autodilu/automobilove-motory" class="hover:text-blue-400">Motory</Link></li>
+              <li><Link href="https://www.nahradni-dily.com/mercedes-benz/skupina-autodilu/odpruzeni-auta" class="hover:text-blue-400">Náprava</Link></li>
+              <li><Link href="https://www.nahradni-dily.com/mercedes-benz/skupina-autodilu/casti-karoserie-auta" class="hover:text-blue-400">Karoserie</Link></li>
+              <li><Link href="https://www.nahradni-dily.com/mercedes-benz/skupina-autodilu/autoelektrika" class="hover:text-blue-400">Autoelektrika</Link></li>
+              <li><Link href="https://www.nahradni-dily.com/mercedes-benz/skupina-autodilu/kola-auta" class="hover:text-blue-400">Kompletni kola a disky</Link></li>
+              <li><Link href="https://www.nahradni-dily.com/mercedes-benz/skupina-autodilu/interier-vozu" class="hover:text-blue-400">Interiér</Link></li>
+
             </ul>
           </div>
           <div class="px-4 my-4 w-full sm:w-auto xl:w-1/5">

@@ -15,7 +15,7 @@ export default function ProductsPage({ products }) {
                     name="description"
                     content="Objevte širokou nabídku kvalitních autodílů pro vozy Mercedes. Nabízíme motorové díly, prvky karoserie, elektrické součástky a další. Rychlá dodávka, skvělé ceny a spolehlivý servis. Vaše auto si zaslouží to nejlepší!"
                 />
-                <link rel="canonical" href="https://autodilyexpress.cz/A-Trida" />
+                <link rel="canonical" href="https://www.nahradni-dily.com/mercedes-benz/vsechny-autodily" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/auto-dily-logo.png" />
                 <meta property="og:locale" content="cs_CZ" />
                 <meta property="og:type" content="website" />

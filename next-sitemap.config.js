@@ -15,12 +15,12 @@ module.exports = {
   },
 
   additionalPaths: async (config) => {
-    // Fetch products data
+   
     const response = await fetch(`${config.siteUrl}/api/products`);
     const products = await response.json();
     
 
-    // Zwróć ścieżki z użyciem slug
+    
     return products.map((product) => ({
       loc: `/autodil/${slugify(product.title)}`, 
       changefreq: 'weekly',

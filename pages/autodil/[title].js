@@ -27,7 +27,7 @@ export default function ProductDetails({ product }) {
     );
     setLoading(true);
   };
-
+ 
   return (
     <>
      <Head>
@@ -37,7 +37,7 @@ export default function ProductDetails({ product }) {
                     name="description"
                     content="Objevte širokou nabídku kvalitních autodílů pro vozy Mercedes. Nabízíme motorové díly, prvky karoserie, elektrické součástky a další. Rychlá dodávka, skvělé ceny a spolehlivý servis. Vaše auto si zaslouží to nejlepší!"
                 />
-                <link rel="canonical" href={`https://www.nahradni-dily.com/autodil/${product.title}`} />
+                <link rel="canonical" href={`https://www.nahradni-dily.com/autodil/${slugify(product.title)}`} />
             
                 <link rel="apple-touch-icon" sizes="180x180" href="https://www.nahradni-dily.com/logo-nerozza.png" />
                 <meta property="og:locale" content="cs_CZ" />

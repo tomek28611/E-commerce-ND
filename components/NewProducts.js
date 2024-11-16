@@ -18,7 +18,7 @@ export default function NewProducts({ products, productF }) {
 
     return (
         <>
-            <section className="items-center py-4 md:absolute relative right-4 top-20 p-1 bg-slate-100 dark:bg-slate-800 text-black dark:text-white">
+            <section className="items-center py-4 md:absolute relative right-4 top-20 p-1  text-black dark:text-white">
 
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-12">
                     <h1 className="text-center font-manrope font-bold text-2xl  text-black dark:text-slate-400 mb-8 max-xl:text-center">Originální náhradní díly pro Mercedes-Benz</h1>

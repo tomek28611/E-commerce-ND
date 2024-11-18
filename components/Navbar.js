@@ -35,7 +35,7 @@ export default function Navbar({ toggleTheme, theme }) {
 
       <div className="text-2xl font-bold text-black dark:text-white">
         <Link href="/">
-          <div className="hover:text-blue-500">Logo</div>
+          <div className="hover:text-blue-500">Náhradní díly</div>
         </Link>
       </div>
 

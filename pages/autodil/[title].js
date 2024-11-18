@@ -30,7 +30,7 @@ export default function ProductDetails({ product }) {
 
   return (
     <>
-    
+
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Náhradní díly pro Mercedes-Benz </title>
@@ -118,11 +118,26 @@ export default function ProductDetails({ product }) {
             <div className="text-2xl font-semibold text-indigo-600">
               {product.price} Kč
             </div>
-            <button className="px-6 py-3 mt-4 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-500 transition-colors">
-            Přidat do košíku
+            <button className="flex px-6 py-3 mt-4 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-500 transition-colors">
+              <div>
+                Přidat do košíku
+              </div>
+              <div>
+
+              </div>
             </button>
+            <div className="block gap-2 md:flex">
+              {product.images.map((img) => (
+                <div key={product._id} className="flex">
+                  <img src={img}
+                    width={50} height={50} className="flex" alt={`Image ${product.title}`} />
+                </div>
+              ))}
+            </div>
           </div>
+          
         </div>
+
       </div>
     </>
   );

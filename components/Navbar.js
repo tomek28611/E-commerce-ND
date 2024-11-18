@@ -13,7 +13,7 @@ export default function Navbar({ toggleTheme, theme }) {
     const handleRouteChangeStart = () => setLoading(true);
     const handleRouteChangeComplete = () => {
       setLoading(false);
-      setMenuOpen(false); // Zamknij menu po zmianie trasy
+      setMenuOpen(false); 
     };
 
     router.events.on("routeChangeStart", handleRouteChangeStart);

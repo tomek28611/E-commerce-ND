@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Spinner from "@/components/Spinner"; 
 
+
 const models = [
   { class: "S-Trida", variants: ["W221", "W222", "W223"], image: "./s.webp" },
   { class: "E-Trida", variants: ["W212", "W213"], image: "./e.webp" },
@@ -24,7 +25,7 @@ const sortedModels = models.sort((a, b) => a.class.localeCompare(b.class));
 
 export default function MercedesModels({ products }) {
   const [loading, setLoading] = useState(false); 
-
+ 
 
   const handleModelClick = () => {
     setLoading(true); 
@@ -69,6 +70,7 @@ export default function MercedesModels({ products }) {
           </Link>
         ))}
       </div>
+     
     </>
   );
 }

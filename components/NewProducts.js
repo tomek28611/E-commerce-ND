@@ -13,7 +13,7 @@ export default function NewProducts({ products, productF }) {
     const [loading, setLoading] = useState(false);
 
     const router = useRouter();
-
+ 
     // const handleNavigation = (title) => {
     //     const urlTitle = slugify(title);
     //     setIsLoading(true);
@@ -39,8 +39,9 @@ export default function NewProducts({ products, productF }) {
 
     return (
         <>
-            <section className="items-center py-4 md:absolute relative right-4 top-20 p-1  text-black dark:text-white">
-
+        
+            <section className="items-center py-4  top-20 p-1  text-black dark:text-white">
+            {/* md:absolute relative right-4 */}
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-12">
                     <h1 className="text-center font-manrope font-bold text-2xl  text-black dark:text-slate-400 mb-8 max-xl:text-center">Originální náhradní díly pro Mercedes-Benz</h1>
                     <h2 className="text-center mb-4 dark:text-slate-400">
@@ -48,7 +49,6 @@ export default function NewProducts({ products, productF }) {
 
                     </h2>
                     <div className="">
-
                         <ButtonsGroup />
                     </div>
 

@@ -28,7 +28,8 @@ export default function Navbar({ toggleTheme, theme }) {
   }, [router]);
 
   return (
-    <nav className="bg-slate-200 dark:bg-gray-800 shadow-md">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-slate-200 dark:bg-gray-800 shadow-md">
+
       {loading && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
           <Spinner />

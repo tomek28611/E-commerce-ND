@@ -93,7 +93,7 @@ export default function ProductsGrid({ products }) {
                             <div key={product._id}
                                 // onClick={() => handleNavigation(product.title)}
                                 >
-                                <Image className="rounded-2xl object-cover product_image_models" src={product.images[0]} width={300} height={300} alt="fotka produktu" />
+                                <img className="rounded-2xl object-cover product_image_models" src={product.images[0]} width={300} height={300} alt="fotka produktu" />
                                 <div className="relative group">
 
                                     <div

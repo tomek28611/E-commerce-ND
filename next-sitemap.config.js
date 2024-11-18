@@ -23,8 +23,9 @@ module.exports = {
     
     return products.map((product) => ({
       loc: `/autodil/${slugify(product.title)}`, 
-      changefreq: 'weekly',
-      priority: 0.7,
+      changefreq: 'daily',
+      priority: 0.8,
+      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
     }));
   },
 };

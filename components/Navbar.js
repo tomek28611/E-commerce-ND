@@ -67,33 +67,39 @@ export default function Navbar({ toggleTheme, theme }) {
             <Spinner />
           </div>
         )}
-{showModels && (
-        <aside id="logo-sidebar" className={` floating-aside fixed top-12 left-0 z-40 w-64 h-[calc(100vh-3rem)] overflow-y-auto transform transition-all duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-          } sm:translate-x-0`}
-          aria-label="Sidebar"
-        >
-          <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-            <div className="ml-2 mb-4  text-center dark:text-white">Vyberte model Mercedes-Benz</div>
-            {sortedModels.map((model) => (
-              <Link key={model.class} href={`/mercedes-benz/${model.class}`}>
-                <div
-                  onClick={handleModelClick}
-                  className=" mb-4 ml-2 relative p-6 border border-gray-300 rounded-lg text-center cursor-pointer transition-all duration-300 hover:brightness-75"
-                  style={{
-                    backgroundImage: `url(${model.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    height: '80px',
-                  }}
-                >
-                  <h3 className="text-white text-sm">{model.class}</h3>
-                  <p className="text-white text-xs">{` ${model.variants.join(", ")}`}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </aside>
-)}
+        {showModels && (
+          <aside id="logo-sidebar" className={` floating-aside fixed top-12 left-0 z-40 w-64 h-[calc(100vh-3rem)] overflow-y-auto transform transition-all duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+            } sm:translate-x-0`}
+            aria-label="Sidebar"
+          >
+            <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+
+              <div className="ml-2 mb-4  text-center dark:text-white">Vyberte model Mercedes-Benz</div>
+
+              <div onClick={toggleModels}>
+                <FaTimes className="fixed text-white border top-10 right-5" size={24} />
+              </div>
+
+              {sortedModels.map((model) => (
+                <Link key={model.class} href={`/mercedes-benz/${model.class}`}>
+                  <div
+                    onClick={handleModelClick}
+                    className=" mb-4 ml-2 relative p-6 border border-gray-300 rounded-lg text-center cursor-pointer transition-all duration-300 hover:brightness-75"
+                    style={{
+                      backgroundImage: `url(${model.image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      height: '80px',
+                    }}
+                  >
+                    <h3 className="text-white text-sm">{model.class}</h3>
+                    <p className="text-white text-xs">{` ${model.variants.join(", ")}`}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </aside>
+        )}
 
         <div className="flex items-center justify-between p-4">
           <div className="text-2xl font-bold text-black dark:text-white">

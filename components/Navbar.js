@@ -55,6 +55,7 @@ export default function Navbar({ toggleTheme, theme }) {
             </div>
            
           </button>
+          
 
 
           <ul className="hidden md:flex space-x-6">

@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import { FiChevronDown } from 'react-icons/fi';
 
 
-export default function Buttons({ setMenuOpen }) {
+export default function ProductTypes({ setMenuOpen }) {
     const [mobileNavActive, setMobileNavActive] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const router = useRouter();

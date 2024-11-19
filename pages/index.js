@@ -4,10 +4,6 @@ import { mongooseConnect } from "@/lib/mongoose";
 import NewProducts from "@/components/NewProducts";
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import Models from "@/components/Models";
-
-import Test from "./test";
-
 
 
 export default function HomePage({ featuredProduct, newProducts }) {
@@ -50,16 +46,11 @@ export default function HomePage({ featuredProduct, newProducts }) {
 
       </Head>
       <div className="bg-white dark:bg-black text-black dark:text-white">
-
         <div>
-          {/* <Models /> */}
           <div className="new_prod_cont">
-          <Test products={newProducts} productF={featuredProduct} />
-            {/* <NewProducts products={newProducts} productF={featuredProduct} /> */}
+            <NewProducts products={newProducts} productF={featuredProduct} />
           </div>
-
         </div>
-
       </div>
     </div>
   );

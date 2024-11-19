@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Navbar from '../components/Navbar';
 import '../styles/globals.css';
 import Footer from "@/components/Footer";
@@ -6,6 +7,10 @@ import Footer from "@/components/Footer";
 function MyApp({ Component, pageProps }) {
   
   const [theme, setTheme] = useState('dark'); 
+
+  const pathname = usePathname();
+
+  const showFooter = pathname !== '/';
 
   useEffect(() => {
     
@@ -42,7 +47,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Navbar toggleTheme={toggleTheme} theme={theme} />
       <Component {...pageProps} />
-      <Footer />
+      {showFooter && <Footer />}
     </>
   );
 }

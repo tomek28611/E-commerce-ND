@@ -13,7 +13,7 @@ export default function Navbar({ toggleTheme, theme }) {
     const handleRouteChangeStart = () => setLoading(true);
     const handleRouteChangeComplete = () => {
       setLoading(false);
-      setMenuOpen(false); 
+      setMenuOpen(false);
     };
 
     router.events.on("routeChangeStart", handleRouteChangeStart);
@@ -44,15 +44,19 @@ export default function Navbar({ toggleTheme, theme }) {
             </Link>
           </div>
 
-       
+
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="text-black dark:text-white md:hidden focus:outline-none"
           >
-            {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            <div className="fixed top-4 right-2 text-xs">menu</div>
+            <div className="fixed top-8 right-2">
+              {menuOpen ? <FaTimes className="fixed top-50 right-2" size={24} /> : <FaBars size={24} />}
+            </div>
+           
           </button>
 
-      
+
           <ul className="hidden md:flex space-x-6">
             <li>
               <Link href="/">
@@ -76,7 +80,7 @@ export default function Navbar({ toggleTheme, theme }) {
             </li>
           </ul>
 
-         
+
           <div className="hidden md:flex items-center space-x-4">
             <input
               type="text"
@@ -125,9 +129,9 @@ export default function Navbar({ toggleTheme, theme }) {
         )}
       </nav>
 
-   
+
       <div className="pt-[65px]">
-       
+
       </div>
     </>
   );

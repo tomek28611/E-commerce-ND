@@ -4,9 +4,32 @@ import Link from "next/link";
 import Spinner from "@/components/Spinner";
 import { useRouter } from "next/router";
 
+
+const models = [
+  { class: "S-Trida", variants: ["W221", "W222", "W223"], image: "../s.webp" },
+  { class: "E-Trida", variants: ["W212", "W213"], image: "../e.webp" },
+  { class: "C-Trida", variants: ["W204", "W205", "W206"], image: "../c.webp" },
+  { class: "A-Trida", variants: ["W169", "W176", "W177"], image: "../a.webp" },
+  { class: "G-Trida", variants: ["W463"], image: "../g.webp" },
+  { class: "GLA-Trida", variants: ["X156", "H247"], image: "../gla.webp" },
+  { class: "GLK-Trida", variants: ["X204"], image: "../glk.webp" },
+  { class: "GLC-Trida", variants: ["X253", "X254"], image: "../glc.webp" },
+  { class: "GLE-(ML)-Trida", variants: ["W166", "W167", "C167", "C292"], image: "../gle.webp" },
+  { class: "GLB-Trida", variants: ["X247"], image: "../glb.webp" },
+  { class: "GLS-Trida", variants: ["X166", "X167"], image: "../gls.webp" },
+  { class: "CLA-Trida", variants: ["C117", "C118"], image: "../cla.webp" },
+  { class: "CLS-Trida", variants: ["W218", "W257"], image: "../cls.webp" },
+  { class: "B-Trida", variants: ["W246", "W247"], image: "../b.webp" },
+  { class: "SL-Trida", variants: ["R232", "R231", "R230"], image: "../sl.webp" },
+];
+
+const sortedModels = models.sort((a, b) => a.class.localeCompare(b.class));
+
 export default function Navbar({ toggleTheme, theme }) {
   const [loading, setLoading] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showModels, setShowModels] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -27,6 +50,14 @@ export default function Navbar({ toggleTheme, theme }) {
     };
   }, [router]);
 
+  const handleModelClick = () => {
+    setLoading(true);
+  };
+
+  const toggleModels = () => {
+    setShowModels(prev => !prev);
+  };
+
   return (
     <>
       {/* Navbar */}
@@ -36,6 +67,33 @@ export default function Navbar({ toggleTheme, theme }) {
             <Spinner />
           </div>
         )}
+{showModels && (
+        <aside id="logo-sidebar" className={` floating-aside fixed top-12 left-0 z-40 w-64 h-[calc(100vh-3rem)] overflow-y-auto transform transition-all duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+          } sm:translate-x-0`}
+          aria-label="Sidebar"
+        >
+          <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+            <div className="ml-2 mb-4  text-center dark:text-white">Vyberte model Mercedes-Benz</div>
+            {sortedModels.map((model) => (
+              <Link key={model.class} href={`/mercedes-benz/${model.class}`}>
+                <div
+                  onClick={handleModelClick}
+                  className=" mb-4 ml-2 relative p-6 border border-gray-300 rounded-lg text-center cursor-pointer transition-all duration-300 hover:brightness-75"
+                  style={{
+                    backgroundImage: `url(${model.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    height: '80px',
+                  }}
+                >
+                  <h3 className="text-white text-sm">{model.class}</h3>
+                  <p className="text-white text-xs">{` ${model.variants.join(", ")}`}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </aside>
+)}
 
         <div className="flex items-center justify-between p-4">
           <div className="text-2xl font-bold text-black dark:text-white">
@@ -53,9 +111,9 @@ export default function Navbar({ toggleTheme, theme }) {
             <div className="fixed top-8 right-2">
               {menuOpen ? <FaTimes className="fixed top-50 right-2" size={24} /> : <FaBars size={24} />}
             </div>
-           
+
           </button>
-          
+
 
 
           <ul className="hidden md:flex space-x-6">
@@ -83,11 +141,9 @@ export default function Navbar({ toggleTheme, theme }) {
 
 
           <div className="hidden md:flex items-center space-x-4">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="px-2 py-1 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 dark:text-white focus:outline-none"
-            />
+            <div>
+              <img src="/models.png" alt="car-model" className="models" onClick={toggleModels} />
+            </div>
             <button
               onClick={toggleTheme}
               className="p-2 bg-gray-200 dark:bg-gray-600 rounded-full hover:bg-gray-300 dark:hover:bg-gray-500"
@@ -120,6 +176,20 @@ export default function Navbar({ toggleTheme, theme }) {
                 <div className="text-black dark:text-white hover:text-blue-500">Kontakt</div>
               </Link>
             </li>
+
+            {/* <button
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              type="button"
+              className="inline-fle items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 fixed top-50 right-2 z-1000"
+            >
+              <span className="">Vyberte model Mercedes-Benz</span>
+              {sidebarOpen ? <FaTimes className="fixed top-50 right-2" size={24} /> :
+                <svg className="fixed top-50 right-2 w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+                </svg>
+              }
+            </button> */}
+
             <button
               onClick={toggleTheme}
               className="p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-500"

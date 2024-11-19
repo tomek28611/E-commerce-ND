@@ -147,3 +147,22 @@ a {
   margin-top: 6px;
   color: rgb(165, 159, 159);
 }
+
+.models{
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  right: 60px;
+  top: 15px;
+
+}
+.model_img {
+  width: 60px;
+ 
+}
+
+@media (max-width: 768px) {
+  .models {
+    display: none;
+  }
+}

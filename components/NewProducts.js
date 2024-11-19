@@ -96,6 +96,7 @@ export default function NewProducts({ products, productF }) {
                 } sm:translate-x-0`}
                 aria-label="Sidebar"
             >
+                
                 <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
                     <div className="ml-2 mb-4  text-center dark:text-white">Vyberte model Mercedes-Benz</div>
                     {sortedModels.map((model) => (

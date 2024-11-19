@@ -6,21 +6,21 @@ import { useRouter } from "next/router";
 
 
 const models = [
-  { class: "S-Trida", variants: ["W221", "W222", "W223"], image: "../s.webp" },
-  { class: "E-Trida", variants: ["W212", "W213"], image: "../e.webp" },
-  { class: "C-Trida", variants: ["W204", "W205", "W206"], image: "../c.webp" },
-  { class: "A-Trida", variants: ["W169", "W176", "W177"], image: "../a.webp" },
-  { class: "G-Trida", variants: ["W463"], image: "../g.webp" },
-  { class: "GLA-Trida", variants: ["X156", "H247"], image: "../gla.webp" },
-  { class: "GLK-Trida", variants: ["X204"], image: "../glk.webp" },
-  { class: "GLC-Trida", variants: ["X253", "X254"], image: "../glc.webp" },
-  { class: "GLE-(ML)-Trida", variants: ["W166", "W167", "C167", "C292"], image: "../gle.webp" },
-  { class: "GLB-Trida", variants: ["X247"], image: "../glb.webp" },
-  { class: "GLS-Trida", variants: ["X166", "X167"], image: "../gls.webp" },
-  { class: "CLA-Trida", variants: ["C117", "C118"], image: "../cla.webp" },
-  { class: "CLS-Trida", variants: ["W218", "W257"], image: "../cls.webp" },
-  { class: "B-Trida", variants: ["W246", "W247"], image: "../b.webp" },
-  { class: "SL-Trida", variants: ["R232", "R231", "R230"], image: "../sl.webp" },
+  { class: "S-Trida", variants: ["W221", "W222", "W223"], image: "https://www.nahradni-dily.com/s.webp" },
+  { class: "E-Trida", variants: ["W212", "W213"], image: "https://www.nahradni-dily.com/e.webp" },
+  { class: "C-Trida", variants: ["W204", "W205", "W206"], image: "https://www.nahradni-dily.com/c.webp" },
+  { class: "A-Trida", variants: ["W169", "W176", "W177"], image: "https://www.autodilyexpress.cz/a.webp" },
+  { class: "G-Trida", variants: ["W463"], image: "https://www.nahradni-dily.com/g.webp" },
+  { class: "GLA-Trida", variants: ["X156", "H247"], image: "https://www.nahradni-dily.com/gla.webp" },
+  { class: "GLK-Trida", variants: ["X204"], image: "https://www.nahradni-dily.com/glk.webp" },
+  { class: "GLC-Trida", variants: ["X253", "X254"], image: "https://www.nahradni-dily.com/glc.webp" },
+  { class: "GLE-(ML)-Trida", variants: ["W166", "W167", "C167", "C292"], image: "https://www.nahradni-dily.com/gle.webp" },
+  { class: "GLB-Trida", variants: ["X247"], image: "https://www.nahradni-dily.com/glb.webp" },
+  { class: "GLS-Trida", variants: ["X166", "X167"], image: "https://www.nahradni-dily.com/gls.webp" },
+  { class: "CLA-Trida", variants: ["C117", "C118"], image: "https://www.nahradni-dily.com/cla.webp" },
+  { class: "CLS-Trida", variants: ["W218", "W257"], image: "https://www.nahradni-dily.com/cls.webp" },
+  { class: "B-Trida", variants: ["W246", "W247"], image: "https://www.nahradni-dily.com/b.webp" },
+  { class: "SL-Trida", variants: ["R232", "R231", "R230"], image: "https://www.nahradni-dily.com/sl.webp" },
 ];
 
 const sortedModels = models.sort((a, b) => a.class.localeCompare(b.class));

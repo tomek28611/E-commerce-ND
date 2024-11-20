@@ -76,7 +76,19 @@ export async function getServerSideProps() {
     '672c7642f8701e5b4ef9744b',
     '6703d4a830fc9241852871e0',
     '6713a001e66be549916e0187',
-    '672c7e72f630b289bfe9cb7d'
+    '672c7e72f630b289bfe9cb7d',
+    '672903f2e08dbc64c282d676',
+    '672685b4ec1ef311433e433b',
+    '6723d43ac57076407df34dfe',
+    '67237a137017ae288144a2d6',
+    '6721f7bd76b9626f911eccc3',
+    '671b5f4fecadf7e9ca6bbf35',
+    '6712b26ad00e8480070e26e1',
+    '6728cd1ec7d4ce386d4ad067',
+    '6728ca416941635c692384e3',
+    '67322309884332d9965e1901',
+    '672b9f9b6e17241d5d2cc357',
+    '6723ded7802b64c54ba517f9'
 
   ];
   const featuredProductId = '6713a001e66be549916e0187';

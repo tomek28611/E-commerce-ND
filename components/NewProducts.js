@@ -100,7 +100,7 @@ export default function NewProducts({ products, productF }) {
                 <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
                     <div className="ml-2 mb-4  text-center dark:text-white">Vyberte model Mercedes-Benz</div>
                     {sortedModels.map((model) => (
-                        <Link key={model.class} href={`/mercedes-benz/${model.class}`}>
+                        <Link key={model.class} href={`https://www.nahradni-dily.com/mercedes-benz/${model.class}`}>
                             <div
                                 onClick={handleModelClick}
                                 className=" mb-4 ml-2 relative p-6 border border-gray-300 rounded-lg text-center cursor-pointer transition-all duration-300 hover:brightness-75"

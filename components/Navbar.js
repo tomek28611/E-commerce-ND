@@ -134,18 +134,12 @@ export default function Navbar({ toggleTheme, theme }) {
               </Link>
             </li>
             <li>
-              <Link href="https://www.autodilyexpress.cz/podpora">
+              <Link href="/podpora">
                 <div className="text-black dark:text-white hover:text-blue-500">Podpora</div>
               </Link>
             </li>
-            <li>
-              <Link href="/kontakt">
-                <div className="text-black dark:text-white hover:text-blue-500">Kontakt</div>
-              </Link>
-            </li>
+  
           </ul>
-
-
           <div className="hidden md:flex items-center space-x-4">
             <div>
               <img src="/models.png" alt="car-model" className="models" onClick={toggleModels} />
@@ -173,15 +167,11 @@ export default function Navbar({ toggleTheme, theme }) {
               </Link>
             </li>
             <li>
-              <Link href="https://www.autodilyexpress.cz/podpora">
+              <Link href="/podpora">
                 <div className="text-black dark:text-white hover:text-blue-500">Podpora</div>
               </Link>
             </li>
-            <li>
-              <Link href="/kontakt">
-                <div className="text-black dark:text-white hover:text-blue-500">Kontakt</div>
-              </Link>
-            </li>
+  
 
             {/* <button
               onClick={() => setSidebarOpen(!sidebarOpen)}

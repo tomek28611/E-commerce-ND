@@ -100,14 +100,14 @@ export default async function handler(req, res) {
 
       // Send email to admin
       await transporter.sendMail({
-        from: `"🚗 AUTO-DILY zpráva od klienta : ${req.body.name}" <autodilyobchod@gmail.com>`,
+        from: `"🚗 NÁHRADNÍ DÍLY zpráva od klienta : ${req.body.name}" <autodilyobchod@gmail.com>`,
         to: 'tomek28611@gmail.com, autodilykr@gmail.com',
         subject: `Nový dotaz od zákazníka na díl: ${req.body.title}`,
         html: `
           <div style="font-family: Arial, sans-serif; background-color: #f7f7f7; padding: 20px; border-radius: 18px;">
             <div style="text-align: center;">
-              <img src="https://moto-rental.s3.amazonaws.com/1730277855197.png" alt="Logo Auto-Dily-Express" style="width: 150px; margin-bottom: 20px;">
-              <h1 style="color: #333;">Máte nový požadavek na díl Auto-Dily-Express</h1>
+              <img src="https://moto-rental.s3.amazonaws.com/1730277855197.png" alt="Logo NÁHRADNÍ DÍLY" style="width: 150px; margin-bottom: 20px;">
+              <h1 style="color: #333;">Máte nový požadavek na díl NÁHRADNÍ DÍLY</h1>
             </div>
             <table style="width: 100%; margin-top: 20px; border-collapse: collapse;">
               <tr style="background-color: #fff; border: 1px solid #ddd;">
@@ -142,14 +142,14 @@ export default async function handler(req, res) {
       // Send confirmation email to client
       const clientEmail = req.body.email; 
       await transporter.sendMail({
-        from: '"🚗 AUTO-DILY" <autodilyobchod@gmail.com>', 
+        from: '"🚗 NÁHRADNÍ DÍLY" <autodilyobchod@gmail.com>', 
         to: clientEmail, 
         subject: 'Potvrzení o přijetí zprávy', 
         html: `
           <div style="font-family: Arial, sans-serif; background-color: #f7f7f7; padding: 20px; border-radius: 18px;">
            <div style="text-align: center;">
-              <img src="https://moto-rental.s3.amazonaws.com/1730277855197.png" alt="Logo Auto-Dily-Express" style="width: 150px; margin-bottom: 20px;">
-              <h1 style="color: #333;">Máte nový požadavek na díl Auto-Dily-Express</h1>
+              <img src="https://moto-rental.s3.amazonaws.com/1730277855197.png" alt="Logo NÁHRADNÍ DÍLY" style="width: 150px; margin-bottom: 20px;">
+              <h1 style="color: #333;">Máte nový požadavek na díl NÁHRADNÍ DÍLY</h1>
             </div>
             <h1 style="color: #333; text-align: center;">Děkujeme za vaši zprávu!</h1>
             <p style="text-align: center;">Vaši zprávu jsme obdrželi a budeme se jí co nejdříve zabývat.</p>
@@ -175,7 +175,7 @@ export default async function handler(req, res) {
               </tr>
            
              <div style="text-align: center; margin-top: 20px;">
-              <a href="https://www.autodilyexpress.cz" style="display: inline-block; background-color: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+              <a href="https://www.nahradni-dily.com/" style="display: inline-block; background-color: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
                 Navštivte naše webové stránky
               </a>
             </div>

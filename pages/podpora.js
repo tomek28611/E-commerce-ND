@@ -92,7 +92,7 @@ export default function Podpora() {
                 <meta name="twitter:description" content="Nabízíme motorové díly, prvky karoserie, elektrické součástky a další. Rychlá dodávka"></meta>
 
             </Head>
-            <div className='dark:bg-gray-800 '>
+            <div className='dark:bg-gray-800 items-center justify-center'>
 
                 <div className={styles.container}>
 

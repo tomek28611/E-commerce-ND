@@ -40,9 +40,9 @@ export default function Footer() {
               </div>
               <ul className="leading-8">
                 <li><Link href="/o-nas" className="hover:text-blue-400">O nas</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">Podmínky</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">Zásady ochrany osobních údajů</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">Kontaktujte nás</Link></li>
+                <li><Link href="/podminky" className="hover:text-blue-400">Podmínky</Link></li>
+                <li><Link href="/zasady-ochrany-udaju" className="hover:text-blue-400">Zásady ochrany osobních údajů</Link></li>
+                <li><Link href="/podpora" className="hover:text-blue-400">Kontaktujte nás</Link></li>
               </ul>
             </div>
             <div className="px-4 my-4 w-full sm:w-auto">
@@ -56,7 +56,6 @@ export default function Footer() {
                 <li><Link href="https://www.nahradni-dily.com/mercedes-benz/skupina-autodilu/autoelektrika" className="hover:text-blue-400">Autoelektrika</Link></li>
                 <li><Link href="https://www.nahradni-dily.com/mercedes-benz/skupina-autodilu/kola-auta" className="hover:text-blue-400">Kompletni kola a disky</Link></li>
                 <li><Link href="https://www.nahradni-dily.com/mercedes-benz/skupina-autodilu/interier-vozu" className="hover:text-blue-400">Interiér</Link></li>
-
               </ul>
             </div>
             <div className="px-4 my-4 w-full sm:w-auto xl:w-1/5">

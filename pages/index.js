@@ -4,7 +4,7 @@ import { mongooseConnect } from "@/lib/mongoose";
 import NewProducts from "@/components/NewProducts";
 import { useState, useEffect } from "react";
 import Head from "next/head";
-
+import InfoBar from "@/components/InfoBar";
 
 export default function HomePage({ featuredProduct, newProducts }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,6 +49,7 @@ export default function HomePage({ featuredProduct, newProducts }) {
         <div>
           <div className="new_prod_cont">
             <NewProducts products={newProducts} productF={featuredProduct} />
+            {/* <InfoBar /> */}
           </div>
         </div>
       </div>

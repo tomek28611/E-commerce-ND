@@ -135,7 +135,7 @@ export default function Navbar({ toggleTheme, theme }) {
             </li>
             <li>
               <Link href="/podpora">
-                <div className="text-black dark:text-white hover:text-blue-500">Podpora</div>
+                <div className="text-black dark:text-white hover:text-blue-500">DÍL NA POŽADAVEK</div>
               </Link>
             </li>
   

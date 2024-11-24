@@ -127,14 +127,7 @@ export default function ProductDetails({ product }) {
 
               </div>
             </button>
-            <div className="block gap-2 md:flex">
-              {product.images.map((img) => (
-                <div key={product._id} className="flex">
-                  <img src={img}
-                    width={50} height={50} className="flex" alt={`Image ${product.title}`} />
-                </div>
-              ))}
-            </div>
+
           </div>
 
         </div>

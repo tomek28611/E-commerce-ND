@@ -31,12 +31,13 @@ export default function FooterBar() {
         height: '64px',
       }}
     >
+
       <p className="text-sm sm:text-base mr-2">
       Nenašli jste, co hledáte? Napište nám, jaký díl chcete
       </p>
       <Link
         href="/podpora"
-        className="text-white hover:bg-blue-700  font-semibold py-2 px-4 rounded-md transition text-xs sm:text-sm"
+        className="text-black dark:text-white hover:bg-blue-700  font-semibold py-2 px-4 rounded-md transition text-xs sm:text-sm"
       >
         DÍL NA POŽADAVEK...
       </Link>

@@ -13,7 +13,7 @@ import Link from "next/link";
 export default function ProductDetails({ product }) {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const handlePreviousImage = () => {
     setCurrentImageIndex((prevIndex) =>

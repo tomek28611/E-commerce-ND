@@ -73,7 +73,7 @@ export default function ProductDetails({ product }) {
             )}
 
 
-            <Image
+            <img
               src={product.images[currentImageIndex]}
               alt={`Image ${currentImageIndex + 1} of ${product.title}`}
               width={600}
@@ -127,7 +127,14 @@ export default function ProductDetails({ product }) {
 
               </div>
             </button>
-
+            <div className="block gap-2 md:flex">
+              {product.images.map((img) => (
+                <div key={product._id} className="flex">
+                  <img src={img}
+                    width={50} height={50} className="flex" alt={`Image ${product.title}`} />
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>

@@ -1,7 +1,7 @@
 import { Product } from "@/models/Product";
 import { mongooseConnect } from "@/lib/mongoose";
 import { slugify } from "@/utils/slugify";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
@@ -13,6 +13,7 @@ export default function ProductDetails({ product }) {
   const [loading, setLoading] = useState(false);
   const [isOrderFormVisible, setIsOrderFormVisible] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+  const [countdown, setCountdown] = useState(48 * 60 * 60);
 
   const handlePreviousImage = () => {
     setCurrentImageIndex((prevIndex) =>
@@ -33,11 +34,41 @@ export default function ProductDetails({ product }) {
   };
 
   const handleSubmitOrder = () => {
-    setShowMessage(true); // Pokazuje komunikat o trwającej aktualizacji
+    setShowMessage(true);
   };
 
   const handleCloseMessage = () => {
-    setShowMessage(false); // Zamyka komunikat
+    setShowMessage(false);
+  };
+
+  useEffect(() => {
+    if (showMessage) {
+      const targetDate = new Date('2024-11-26T15:00:00');
+      const interval = setInterval(() => {
+        const now = new Date();
+        const timeRemaining = targetDate - now;
+
+        if (timeRemaining <= 0) {
+          clearInterval(interval);
+          setCountdown(0);
+        } else {
+          setCountdown(timeRemaining);
+        }
+      }, 1000);
+
+      return () => clearInterval(interval);
+    }
+  }, [showMessage]);
+
+
+  const formatTime = (timeInMilliseconds) => {
+    const totalSeconds = Math.floor(timeInMilliseconds / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    return `${hours.toString().padStart(2, '0')}:${minutes
+      .toString()
+      .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
 
   return (
@@ -200,9 +231,11 @@ export default function ProductDetails({ product }) {
                       <div class=" flex flex-col justify-center items-center p-4">
                         <img src="https://www.svgrepo.com/show/426192/cogs-settings.svg" alt="Logo" class="mb-8 h-40" />
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-gray-700 dark:text-white mb-4">Na webu probíhá údržba</h1>
-                        <p class="text-center text-gray-500 dark:text-gray-300 text-lg md:text-xl lg:text-2xl mb-8">Je nám líto, ale Vaši objednávku dnes nemůžeme přijmout</p>
-                        <p class="text-center text-gray-500 dark:text-gray-300 text-lg md:text-xl lg:text-2xl mb-8">Usilovně pracujeme na zlepšení uživatelského zážitku. Zůstaňte naladěni!</p>
-
+                        <p class="text-center text-gray-500 dark:text-gray-300 text-lg md:text-xl lg:text-2xl font-semibold mb-8">Je nám líto, ale Vaši objednávku dnes nemůžeme přijmout</p>
+                        <p class="text-center text-gray-500 dark:text-gray-300 text-lg md:text-xl lg:text-2xl mb-4">Usilovně pracujeme na zlepšení uživatelského zážitku. Zůstaňte naladěni!</p>
+                        <p className="text-xl font-bold text-gray-500 mb-8">Dokončení údržbářských prací: 
+                          {formatTime(countdown)}
+                        </p>
                         <div class="flex space-x-4">
                           <a href="https://www.nahradni-dily.com/podpora" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded dark:bg-gray-700 dark:hover:bg-gray-600">Kontaktujte nás</a>
                           <button onClick={handleCloseMessage} class="border-2 border-gray-800 text-black font-bold py-3 px-6 rounded dark:text-white dark:border-white">Zavřít</button>

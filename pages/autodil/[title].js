@@ -121,7 +121,7 @@ export default function ProductDetails({ product }) {
             </div>
             <button className="flex px-6 py-3 mt-4 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-500 transition-colors">
               <div>
-                Přidat do košíku
+              Objednávka
               </div>
               <div>
 

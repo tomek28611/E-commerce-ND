@@ -79,7 +79,7 @@ export default function ProductDetails({ product }) {
               width={600}
               height={600}
               className="rounded-lg"
-              onLoadingComplete={() => setLoading(false)}
+              onLoad={() => setLoading(false)}
             />
 
 

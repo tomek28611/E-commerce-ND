@@ -1,4 +1,3 @@
-
 import { Product } from "@/models/Product";
 import { mongooseConnect } from "@/lib/mongoose";
 import { slugify } from "@/utils/slugify";
@@ -9,11 +8,11 @@ import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import Head from "next/head";
 import Link from "next/link";
 
-
 export default function ProductDetails({ product }) {
-
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [isOrderFormVisible, setIsOrderFormVisible] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
   const handlePreviousImage = () => {
     setCurrentImageIndex((prevIndex) =>
@@ -29,9 +28,20 @@ export default function ProductDetails({ product }) {
     setLoading(false);
   };
 
+  const toggleOrderForm = () => {
+    setIsOrderFormVisible(!isOrderFormVisible);
+  };
+
+  const handleSubmitOrder = () => {
+    setShowMessage(true); // Pokazuje komunikat o trwającej aktualizacji
+  };
+
+  const handleCloseMessage = () => {
+    setShowMessage(false); // Zamyka komunikat
+  };
+
   return (
     <>
-
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Náhradní díly pro Mercedes-Benz </title>
@@ -40,38 +50,16 @@ export default function ProductDetails({ product }) {
           content="Objevte širokou nabídku autodílů pro Mercedes. Nabízíme motory, prvky karoserie, elektrické součástky a další. Rychlá dodávka, skvělé ceny"
         />
         <link rel="canonical" href={`https://www.nahradni-dily.com/autodil/${slugify(product.title)}`} />
-
-        <link rel="apple-touch-icon" sizes="180x180" href="https://www.nahradni-dily.com/logo-nerozza.png" />
-        <meta property="og:locale" content="cs_CZ" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Originální náhradní díly pro Mercedes-Benz. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Mercedes-Benz." />
-        <meta property="og:image" content="https://www.nahradni-dily.com/logo-nerozza.png" />
-        <meta property="og:image:alt" content="Náhradní díly pro Mercedes-Benz" />
-        <meta property="og:image:width" content="150" />
-        <meta property="og:image:height" content="150" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:description" content="Originální náhradní díly pro Mercedes-Benz. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Mercedes-Benz." />
-        <meta property="og:url" content={`https://www.nahradni-dily.com/autodil/${slugify(product.title)}`} />
-        <meta property="og:site_name" content="nahradni-dily.com" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Originální náhradní díly pro Mercedes-Benz. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Mercedes-Benz." />
-        <meta name="twitter:image" content="https://www.nahradni-dily.com/logo-nerozza.png" />
-        <meta name="twitter:image:alt" content="Náhradní díly pro Mercedes-Benz"></meta>
-        <meta name="twitter:description" content="Originální náhradní díly pro Mercedes-Benz. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Mercedes-Benz."></meta>
-
       </Head>
+
       <div className="container mx-auto p-6 bg-slate-100 dark:bg-slate-700">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-
           <div className="relative">
-
             {loading && (
               <div className="absolute inset-0 flex items-center justify-center bg-white dark:bg-slate-800 bg-opacity-50 z-10">
                 <AiOutlineLoading3Quarters className="text-indigo-600 animate-spin text-4xl" />
               </div>
             )}
-
 
             <img
               src={product.images[currentImageIndex]}
@@ -81,7 +69,6 @@ export default function ProductDetails({ product }) {
               className="rounded-lg"
               onLoad={() => setLoading(false)}
             />
-
 
             <button
               className="absolute top-1/2 left-4 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-200 z-20"
@@ -96,13 +83,11 @@ export default function ProductDetails({ product }) {
               <BsArrowRight className="text-gray-600" size={20} />
             </button>
 
-
             <div className="flex justify-center mt-4 space-x-2">
               {product.images.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-3 h-3 rounded-full ${index === currentImageIndex ? 'bg-indigo-600' : 'bg-gray-300'
-                    }`}
+                  className={`w-3 h-3 rounded-full ${index === currentImageIndex ? 'bg-indigo-600' : 'bg-gray-300'}`}
                   onClick={() => {
                     setCurrentImageIndex(index);
                     setLoading(true);
@@ -112,39 +97,133 @@ export default function ProductDetails({ product }) {
             </div>
           </div>
 
-
-          <div className="space-y-4 ">
+          <div className="space-y-4">
             <h1 className="text-3xl font-bold text-gray-800 dark:text-white">{product.title}</h1>
             <p className="text-gray-600 leading-6 dark:text-slate-300">{product.description}</p>
             <div className="text-2xl font-semibold text-indigo-600">
               {product.price} Kč
             </div>
-            <button className="flex px-6 py-3 mt-4 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-500 transition-colors">
-              <div>
-              Objednávka
-              </div>
-              <div>
-
-              </div>
+            <button
+              onClick={toggleOrderForm}
+              className="flex px-6 py-3 mt-4 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-500 transition-colors"
+            >
+              <div>Objednávka</div>
             </button>
+
+            {isOrderFormVisible && (
+              <div className="mt-6 bg-gray-300 p-6 rounded-lg shadow-md">
+                <h2 className="text-xl font-bold">Objednávka pro {product.title}</h2>
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-gray-700">Název produktu</label>
+                    <input
+                      type="text"
+                      value={product.title}
+                      readOnly
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-700">Cena</label>
+                    <input
+                      type="text"
+                      value={`${product.price} Kč`}
+                      readOnly
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-700">Množství</label>
+                    <input
+                      type="number"
+                      min="1"
+                      defaultValue="1"
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-700">Jméno a příjmení příjemce</label>
+                    <input
+                      type="text"
+                      placeholder="Zadejte Jméno a příjmení příjemce"
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-700">Email</label>
+                    <input
+                      type="email"
+                      placeholder="Zadejte Email"
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-700">Město</label>
+                    <input
+                      type="email"
+                      placeholder="Zadejte Město"
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-700">Adresa</label>
+                    <input
+                      type="email"
+                      placeholder="Zadejte Adresa"
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-700">PSČ</label>
+                    <input
+                      type="email"
+                      placeholder="Zadejte PSČ"
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                  <button
+                    // type="submit"
+                    onClick={handleSubmitOrder}
+                    className="w-full py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-500"
+                  >
+                    Odeslat objednávku
+                  </button>
+                </div>
+              </div>
+            )}
+            <div>
+              {showMessage && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                  <div className="bg-white p-1 rounded-md shadow-lg">
+
+                    <div class="bg-gray-100 dark:bg-gray-800">
+                      <div class=" flex flex-col justify-center items-center p-4">
+                        <img src="https://www.svgrepo.com/show/426192/cogs-settings.svg" alt="Logo" class="mb-8 h-40" />
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-gray-700 dark:text-white mb-4">Na webu probíhá údržba</h1>
+                        <p class="text-center text-gray-500 dark:text-gray-300 text-lg md:text-xl lg:text-2xl mb-8">Je nám líto, ale Vaši objednávku dnes nemůžeme přijmout</p>
+                        <p class="text-center text-gray-500 dark:text-gray-300 text-lg md:text-xl lg:text-2xl mb-8">Usilovně pracujeme na zlepšení uživatelského zážitku. Zůstaňte naladěni!</p>
+
+                        <div class="flex space-x-4">
+                          <a href="https://www.nahradni-dily.com/podpora" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded dark:bg-gray-700 dark:hover:bg-gray-600">Kontaktujte nás</a>
+                          <button onClick={handleCloseMessage} class="border-2 border-gray-800 text-black font-bold py-3 px-6 rounded dark:text-white dark:border-white">Zavřít</button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              )}
+            </div>
+
             <div className="block gap-2 md:flex">
               {product.images.map((img) => (
                 <div key={product._id} className="flex">
-                  <img src={img}
-                    width={50} height={50} className="flex" alt={`Image ${product.title}`} />
+                  <img src={img} width={50} height={50} className="flex" alt={`Image ${product.title}`} />
                 </div>
               ))}
             </div>
           </div>
-
         </div>
-        <Link href="https://www.instagram.com/partsnerozza.cz?utm_source=qr&igsh=MWMzamlqOHh6eXV6dg==" class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
-          <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
-          </svg>
-        </Link>
-
-
       </div>
     </>
   );
@@ -153,7 +232,6 @@ export default function ProductDetails({ product }) {
 export async function getServerSideProps(context) {
   await mongooseConnect();
   const { title } = context.params;
-
 
   const products = await Product.find();
   const product = products.find(

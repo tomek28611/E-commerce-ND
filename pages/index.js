@@ -40,9 +40,9 @@ export default function HomePage({ featuredProduct, newProducts }) {
         <meta property="og:site_name" content="nahradni-dily.com" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Originální náhradní díly pro Mercedes-Benz. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Mercedes-Benz." />
-        <meta name="twitter:image" content="https://www.nahradni-dily.com/logo-nerozza.png"/>
-          <meta name="twitter:image:alt" content="Náhradní díly pro Mercedes-Benz"></meta>
-          <meta name="twitter:description" content="Originální náhradní díly pro Mercedes-Benz. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Mercedes-Benz."></meta>
+        <meta name="twitter:image" content="https://www.nahradni-dily.com/logo-nerozza.png" />
+        <meta name="twitter:image:alt" content="Náhradní díly pro Mercedes-Benz"></meta>
+        <meta name="twitter:description" content="Originální náhradní díly pro Mercedes-Benz. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Mercedes-Benz."></meta>
 
       </Head>
       <div className="bg-white dark:bg-black text-black dark:text-white">

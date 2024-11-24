@@ -26,7 +26,7 @@ export default function ProductDetails({ product }) {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === product.images.length - 1 ? 0 : prevIndex + 1
     );
-    setLoading(true);
+    setLoading(false);
   };
 
   return (

@@ -7,13 +7,90 @@ import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 export default function ProductDetails({ product }) {
+  const router = useRouter();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [title, setTitle] = useState('');
+  const [price, setPrice] = useState('');
+  const [city, setCity] = useState('');
+  const [postalCode, setPostalCode] = useState('');
+  const [street, setStreet] = useState('');
+
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loading, setLoading] = useState(false);
   const [isOrderFormVisible, setIsOrderFormVisible] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const [countdown, setCountdown] = useState(48 * 60 * 60);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+
+  useEffect(() => {
+
+    setTitle(product.title);
+  }, [product]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    setSuccess(false);
+
+    const requestData = {
+      name,
+      email,
+      phone,
+      title,
+      price,
+      city,
+      postalCode,
+      street,
+      message,
+    };
+
+    try {
+      const response = await fetch('/api/order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccess(true);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setTitle('');
+        // setTitleNr('');
+        setVin('');
+        setMessage('');
+        router.push('/?message=success');
+      } else {
+        throw new Error(data.message || 'Something went wrong');
+      }
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+      setIsModalVisible(true);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
+    window.location.reload();
+  };
 
   const handlePreviousImage = () => {
     setCurrentImageIndex((prevIndex) =>
@@ -146,13 +223,17 @@ export default function ProductDetails({ product }) {
                 <h2 className="text-xl font-bold">Objednávka pro {product.title}</h2>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-gray-700">Název produktu</label>
-                    <input
-                      type="text"
-                      value={product.title}
-                      readOnly
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                    />
+                    <div>
+                      <label className="block text-gray-700">Název produktu</label>
+                      <input
+                        type="text"
+                        value={title}
+                        readOnly
+                        className="w-full p-2 border border-gray-300 rounded-md bg-gray-100"
+                      />
+                    </div>
+
+
                   </div>
                   <div>
                     <label className="block text-gray-700">Cena</label>
@@ -173,56 +254,118 @@ export default function ProductDetails({ product }) {
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-700">Jméno a příjmení příjemce</label>
+                    <label className="block text-gray-700">Jméno a příjmení příjemce*</label>
+
                     <input
                       type="text"
                       placeholder="Zadejte Jméno a příjmení příjemce"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       className="w-full p-2 border border-gray-300 rounded-md"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-700">Telefon příjemce*</label>
+
+                    <input
+                      type="text"
+                      placeholder="Zadejte telefon příjemce"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                      required
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-700">Email</label>
+                    <label className="block text-gray-700">Email*</label>
+
                     <input
                       type="email"
                       placeholder="Zadejte Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="w-full p-2 border border-gray-300 rounded-md"
+                      required
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-700">Město</label>
+                    <label className="block text-gray-700">Město*</label>
                     <input
                       type="email"
                       placeholder="Zadejte Město"
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
                       className="w-full p-2 border border-gray-300 rounded-md"
+                      required
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-700">Adresa</label>
+                    <label className="block text-gray-700">Adresa*</label>
                     <input
                       type="email"
                       placeholder="Zadejte Adresa"
+                      value={street}
+                      onChange={(e) => setStreet(e.target.value)}
                       className="w-full p-2 border border-gray-300 rounded-md"
+                      required
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-700">PSČ</label>
+                    <label className="block text-gray-700">PSČ*</label>
                     <input
                       type="email"
                       placeholder="Zadejte PSČ"
+                      value={postalCode}
+                      onChange={(e) => setPostalCode(e.target.value)}
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-700">Zpráva</label>
+                    <textarea type="text"
+                      placeholder="Zpráva"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                       className="w-full p-2 border border-gray-300 rounded-md"
                     />
+
                   </div>
                   <button
                     // type="submit"
-                    onClick={handleSubmitOrder}
+                    onClick={handleSubmit}
+                    disabled={loading}
                     className="w-full py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-500"
                   >
-                    Odeslat objednávku
+                    {loading ? 'Odesílání...' : 'Odeslat objednávku'}
+
                   </button>
                 </div>
               </div>
             )}
             <div>
+
+              {isModalVisible && (
+                <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
+                  <div className="bg-gray-100 rounded-lg shadow-lg p-6 w-96 text-center">
+                    <h2 className="text-2xl font-semibold mb-4 bg-gray-200 rounded-lg shadow-md">Objednávka se zpracovává</h2>
+                    <p className="mb-4">
+                      Na vaší objednávce pracujeme. Potvrzení bude zasláno na
+                      e-mail. Brzy vás budeme kontaktovat.
+                    </p>
+                    <button
+                      onClick={handleCloseModal}
+                      className="bg-blue-500 text-white px-4 py-2  hover:bg-blue-600 rounded-lg shadow-lg"
+                    >
+                      OK
+                    </button>
+                  </div>
+                </div>
+              )}
+
+
               {showMessage && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                   <div className="bg-white p-1 rounded-md shadow-lg">
@@ -233,7 +376,7 @@ export default function ProductDetails({ product }) {
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-gray-700 dark:text-white mb-4">Na webu probíhá údržba</h1>
                         <p class="text-center text-gray-500 dark:text-gray-300 text-lg md:text-xl lg:text-2xl font-semibold mb-8">Je nám líto, ale Vaši objednávku dnes nemůžeme přijmout</p>
                         <p class="text-center text-gray-500 dark:text-gray-300 text-lg md:text-xl lg:text-2xl mb-4">Usilovně pracujeme na zlepšení uživatelského zážitku. Zůstaňte naladěni!</p>
-                        <p className="text-xl font-bold text-gray-500 mb-8">Dokončení údržbářských prací: 
+                        <p className="text-xl font-bold text-gray-500 mb-8">Dokončení údržbářských prací:
                           {formatTime(countdown)}
                         </p>
                         <div class="flex space-x-4">

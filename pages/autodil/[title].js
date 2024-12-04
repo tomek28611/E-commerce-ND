@@ -219,10 +219,10 @@ export default function ProductDetails({ product }) {
             </button>
 
             {isOrderFormVisible && (
-              <div className="mt-6 bg-gray-300 p-6 rounded-lg shadow-md">
-                <h2 className="text-xl font-bold">Objednávka pro {product.title}</h2>
-                <div className="space-y-4">
-                  <div>
+              <form onSubmit={handleSubmit}>
+                <div className="mt-6 bg-gray-300 p-6 rounded-lg shadow-md">
+                  <h2 className="text-xl font-bold">Objednávka pro {product.title}</h2>
+                  <div className="space-y-4">
                     <div>
                       <label className="block text-gray-700">Název produktu</label>
                       <input
@@ -232,119 +232,111 @@ export default function ProductDetails({ product }) {
                         className="w-full p-2 border border-gray-300 rounded-md bg-gray-100"
                       />
                     </div>
-
-
+                    <div>
+                      <label className="block text-gray-700">Cena</label>
+                      <input
+                        type="text"
+                        value={`${product.price} Kč`}
+                        readOnly
+                        className="w-full p-2 border border-gray-300 rounded-md"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700">Množství</label>
+                      <input
+                        type="number"
+                        min="1"
+                        defaultValue="1"
+                        className="w-full p-2 border border-gray-300 rounded-md"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700">Jméno a příjmení příjemce*</label>
+                      <input
+                        type="text"
+                        placeholder="Zadejte Jméno a příjmení příjemce"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700">Telefon příjemce*</label>
+                      <input
+                        type="text"
+                        placeholder="Zadejte telefon příjemce"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700">Email*</label>
+                      <input
+                        type="email"
+                        placeholder="Zadejte Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700">Město*</label>
+                      <input
+                        type="text" // Zmieniony typ
+                        placeholder="Zadejte Město"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700">Adresa*</label>
+                      <input
+                        type="text" // Zmieniony typ
+                        placeholder="Zadejte Adresa"
+                        value={street}
+                        onChange={(e) => setStreet(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700">PSČ*</label>
+                      <input
+                        type="text" // Zmieniony typ
+                        placeholder="Zadejte PSČ"
+                        value={postalCode}
+                        onChange={(e) => setPostalCode(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700">Zpráva</label>
+                      <textarea
+                        placeholder="Zpráva"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded-md"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-500"
+                    >
+                      {loading ? 'Odesílání...' : 'Odeslat objednávku'}
+                    </button>
                   </div>
-                  <div>
-                    <label className="block text-gray-700">Cena</label>
-                    <input
-                      type="text"
-                      value={`${product.price} Kč`}
-                      readOnly
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700">Množství</label>
-                    <input
-                      type="number"
-                      min="1"
-                      defaultValue="1"
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700">Jméno a příjmení příjemce*</label>
-
-                    <input
-                      type="text"
-                      placeholder="Zadejte Jméno a příjmení příjemce"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-700">Telefon příjemce*</label>
-
-                    <input
-                      type="text"
-                      placeholder="Zadejte telefon příjemce"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700">Email*</label>
-
-                    <input
-                      type="email"
-                      placeholder="Zadejte Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700">Město*</label>
-                    <input
-                      type="email"
-                      placeholder="Zadejte Město"
-                      value={city}
-                      onChange={(e) => setCity(e.target.value)}
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700">Adresa*</label>
-                    <input
-                      type="email"
-                      placeholder="Zadejte Adresa"
-                      value={street}
-                      onChange={(e) => setStreet(e.target.value)}
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700">PSČ*</label>
-                    <input
-                      type="email"
-                      placeholder="Zadejte PSČ"
-                      value={postalCode}
-                      onChange={(e) => setPostalCode(e.target.value)}
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700">Zpráva</label>
-                    <textarea type="text"
-                      placeholder="Zpráva"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      className="w-full p-2 border border-gray-300 rounded-md"
-                    />
-
-                  </div>
-                  <button
-                    // type="submit"
-                    onClick={handleSubmit}
-                    disabled={loading}
-                    className="w-full py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-500"
-                  >
-                    {loading ? 'Odesílání...' : 'Odeslat objednávku'}
-
-                  </button>
                 </div>
-              </div>
+              </form>
             )}
+
             <div>
 
               {isModalVisible && (

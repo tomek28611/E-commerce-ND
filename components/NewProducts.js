@@ -35,6 +35,7 @@ export default function NewProducts({ products, productF }) {
     const [isLoading, setIsLoading] = useState(false);
     const [loading, setLoading] = useState(false);
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [showModels, setShowModels] = useState(false);
 
     const router = useRouter();
 
@@ -69,6 +70,14 @@ export default function NewProducts({ products, productF }) {
         };
     }, [router]);
 
+    const toggleModels = () => {
+        setShowModels((prev) => !prev);
+    };
+
+    const closeModal = () => {
+        setShowModels(false);
+    };
+
 
     return (
         <>
@@ -79,26 +88,25 @@ export default function NewProducts({ products, productF }) {
                 </div>
             )}
 
-         
+
             <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
                 type="button"
                 className="inline-fle items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 fixed top-50 right-2 z-1000"
             >
                 <span className="">Vyberte model Mercedes-Benz</span>
-                {sidebarOpen ? <FaTimes className="fixed top-50 right-2" size={24} /> : 
-                <svg className="fixed top-50 right-2 w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-                </svg>
-}
+                {sidebarOpen ? <FaTimes className="fixed top-50 right-2" size={24} /> :
+                    <svg className="fixed top-50 right-2 w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+                    </svg>
+                }
             </button>
 
-            <aside id="logo-sidebar"  className={`floating-aside fixed top-12 left-0 z-40 w-64 h-[calc(100vh-3rem)] overflow-y-auto transform transition-all duration-300 ${
-                    sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+            {/* <aside id="logo-sidebar" className={`floating-aside fixed top-12 left-0 z-40 w-64 h-[calc(100vh-3rem)] overflow-y-auto transform transition-all duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
                 } sm:translate-x-0`}
                 aria-label="Sidebar"
             >
-                
+
                 <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
                     <div className="ml-2 mb-4  text-center dark:text-white">Vyberte model Mercedes-Benz</div>
                     {sortedModels.map((model) => (
@@ -119,13 +127,127 @@ export default function NewProducts({ products, productF }) {
                         </Link>
                     ))}
                 </div>
-            </aside>
+            </aside> */}
 
-            <div className="content p-4 sm:ml-64">
+            {showModels && (
+                <div
+                    className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+                    onClick={closeModal}
+                >
+                    <div
+                        className="bg-gray-300 border rounded-2xl p-5 grid grid-cols-3 gap-4 relative max-w-4xl w-[90%] shadow-lg"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            className="absolute top-0 right-2 text-lg bg-transparent text-black border "
+                            onClick={closeModal}
+                        >
+                            zavřít
+                        </button>
+                        {/* <Link href="/nahradni-dily/mercedes/A-Trida">
+                            <div
+                                className="relative bg-cover bg-center h-28 w-full flex items-end justify-center text-white cursor-pointer"
+                                style={{ backgroundImage: "url(a.webp)" }}
+                            >
+                                <span className="absolute inset-x-0 bottom-0 bg-black bg-opacity-60 p-2 rounded-b-md">
+                                    Mercedes-Benz třídy A
+                                </span>
+                            </div>
+                        </Link> */}
+
+                        {sortedModels.map((model) => (
+                            <Link key={model.class} href={`https://www.nahradni-dily.com/mercedes-benz/${model.class}`}>
+                                <div
+                                    onClick={handleModelClick}
+                                    className="mt-2 mb-1 ml-2 relative p-6 border border-gray-600 rounded-lg text-center cursor-pointer transition-all duration-300 hover:brightness-75"
+                                    style={{
+                                        backgroundImage: `url(${model.image})`,
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'center',
+                                        height: '80px',
+                                    }}
+                                >
+                                    <h3 className="text-white text-sm">{model.class}</h3>
+                                    <p className="text-white text-xs">{` ${model.variants.join(", ")}`}</p>
+                                </div>
+                            </Link>
+                        ))}
+
+                    </div>
+                </div>
+            )}
+
+            <div className="">
                 <section className="items-center py-4  p-1  text-black dark:text-white">
 
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-12 mt-8">
-                        <h1 className="text-center font-manrope font-bold text-2xl  text-black dark:text-slate-400 mb-8 max-xl:text-center">Originální náhradní díly pro Mercedes-Benz</h1>
+                        <h1 className="text-center font-manrope font-bold text-2xl  text-black dark:text-slate-400 mb-8 max-xl:text-center">Originální náhradní díly<br />Vyberte značku
+                        </h1>
+                        <div className="flex justify-center items-center max-w-md mx-auto space-x-2 md:space-x-8 mb-12">
+                            <div>
+                                {/* <img src="./mercedes.png" className="w-14 h-14 flex justify-center items-center max-w-md mx-auto space-x-4 mt-2" /> */}
+                                <h2 className="text-center"></h2>
+                            </div>
+                            <div
+                                onClick={toggleModels}
+                                className="cursor-pointer p-2 md:p-4 bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-12 h-12 md:w-32 md:h-32 flex flex-col justify-center items-center"
+                            >
+                                <img
+                                    src="./mercedes.png"
+                                    className="w-14 h-14 mb-2"
+                                    alt="Mercedes Logo"
+                                />
+                                <h2 className="text-white font-xs  md:font-semibold text-sm truncate">Mercedes</h2>
+                            </div>
+
+
+                            <div
+                                onClick={() => router.push('/skoda')}
+                                className="cursor-pointer p-2 md:p-4 bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-12 h-12 md:w-32 md:h-32 flex flex-col justify-center items-center"
+                            >
+                                <img
+                                    src="./skoda.png"
+                                    className="w-14 h-14 md:w-18 md:h-18 mb-2"
+                                    alt="Mercedes Logo"
+                                />
+                                <h2 className="text-white  px-3  font-semibold text-sm truncate">Skoda</h2>
+                            </div>
+
+                            <div
+                                onClick={() => router.push('/bmw')}
+                                className="cursor-pointer p-2 md:p-4 bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-12 h-12 md:w-32 md:h-32 flex flex-col justify-center items-center"
+                            >
+                                <img
+                                    src="./bmw.png"
+                                    className="w-14 h-14 md:w-18 md:h-18 mb-2"
+                                    alt="Mercedes Logo"
+                                />
+                                <h2 className="text-white  px-3  font-semibold text-sm truncate">BMW</h2>
+                            </div>
+                            <div
+                                onClick={() => router.push('/audi')}
+                                className="cursor-pointer p-2 md:p-4 bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-14 h-12 md:w-32 md:h-32 flex flex-col justify-center items-center"
+                            >
+                                <img
+                                    src="./audi.png"
+                                    className="w-14 h-14 md:w-32 md:h-18 mb-2"
+                                    alt="Mercedes Logo"
+                                />
+                                <h2 className="text-white  px-6 mt-1  font-semibold text-sm truncate">Audi</h2>
+                            </div>
+                            <div
+                                onClick={() => router.push('/volkswagen')}
+                                className="cursor-pointer p-2 md:p-4 bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-12 h-12 md:w-32 md:h-32 flex flex-col justify-center items-center"
+                            >
+                                <img
+                                    src="./vw.png"
+                                    className="w-14 h-14 md:w-18 md:h-18 mb-2"
+                                    alt="Mercedes Logo"
+                                />
+                                <h2 className="text-white  font-semibold text-sm truncate">Volkswagen</h2>
+                            </div>
+                        </div>
+
                         <h2 className="text-center mb-4 dark:text-slate-400">
                             Nabízíme:<br />
                         </h2>

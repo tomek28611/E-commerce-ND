@@ -169,14 +169,18 @@ export default function ProductDetails({ product }) {
               </div>
             )}
 
-            <img
-              src={product.images[currentImageIndex]}
-              alt={`Image ${currentImageIndex + 1} of ${product.title}`}
-              width={600}
-              height={600}
-              className="rounded-lg"
-              onLoad={() => setLoading(false)}
-            />
+            <div className="relative">
+              <img
+                src={product.images[currentImageIndex]}
+                alt={`Image ${currentImageIndex + 1} of ${product.title}`}
+                width={600}
+                height={600}
+                className="rounded-lg"
+                onLoad={() => setLoading(false)}
+              />
+              <div className="absolute bottom-0 left-0 w-full h-6 bg-white dark:bg-slate-700"></div>
+              
+            </div>
 
             <button
               className="absolute top-1/2 left-4 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-200 z-20"

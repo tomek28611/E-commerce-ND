@@ -90,10 +90,15 @@ export default function ProductsGrid({ products }) {
                         <Link key={product._id} href={`https://www.nahradni-dily.com/autodil/${slugify(product.title)}`}
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer"
                         >
-                            <div key={product._id}
-                                // onClick={() => handleNavigation(product.title)}
-                                >
-                                <img className="rounded-2xl object-cover product_image_models" src={product.images[0]} width={300} height={300} alt="fotka produktu" />
+                            <div key={product._id} className="relative"
+                            // onClick={() => handleNavigation(product.title)}
+                            >
+                                <div className="relative">
+                                    <img className="rounded-2xl object-cover product_image_models" src={product.images[0]} width={300} height={300} alt="fotka produktu" />
+                                    <div className="absolute bottom-0 left-0 w-full h-6 bg-white dark:bg-slate-700"></div>
+                                </div>
+                                <div className="absolute bottom-0 left-0 w-full h-6 bg-white dark:bg-slate-700"></div>
+
                                 <div className="relative group">
 
                                     <div

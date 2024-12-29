@@ -97,7 +97,7 @@ export default function ProductsGrid({ products }) {
                                     <img className="rounded-2xl object-cover product_image_models" src={product.images[0]} width={300} height={300} alt="fotka produktu" />
                                     <div className="absolute bottom-0 left-0 w-full h-6 bg-white dark:bg-slate-700"></div>
                                 </div>
-                                <div className="absolute bottom-0 left-0 w-full h-6 bg-white dark:bg-slate-700"></div>
+                                <div className="absolute bottom-0 left-0 w-full h-7 bg-white dark:bg-slate-700"></div>
 
                                 <div className="relative group">
 

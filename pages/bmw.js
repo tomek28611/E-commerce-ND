@@ -37,7 +37,7 @@ export default function ProductsPage({ products }) {
 
             </Head>
             <div className="dark:bg-slate-700">
-                <h1 className="text-center mb-4 font-manrope font-bold text-2xl dark:text-slate-200">Náhradní díly na vozy BMW</h1>
+                <h1 className="text-center mb-4  font-manrope font-bold text-2xl dark:text-slate-200">Náhradní díly na vozy BMW</h1>
                 <ProductsGrid products={products} />
             </div>
             <section className="bg-gray-300 text-gray-800 p-6 rounded-lg shadow-lg mx-auto">

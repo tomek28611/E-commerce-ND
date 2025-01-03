@@ -152,7 +152,7 @@ export default function Navbar({ toggleTheme, theme }) {
           </aside>
         )} */}
 
-        <div className="flex items-center justify-between p-4">
+        <div className="flex items-center justify-between p-3">
           <div className="text-2xl font-bold text-black dark:text-white">
             <Link href="/">
               <div className="hover:text-blue-500">Náhradní díly</div>

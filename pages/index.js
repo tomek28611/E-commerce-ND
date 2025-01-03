@@ -48,7 +48,7 @@ export default function HomePage({ featuredProduct, newProducts }) {
       </Head>
       <div className="bg-white dark:bg-black text-black dark:text-white">
         <div>
-          <div className="new_prod_cont">
+          <div className="new_prod_cont ">
             <NewProducts products={newProducts} productF={featuredProduct} />
             {/* <InfoBar /> */}
           </div>

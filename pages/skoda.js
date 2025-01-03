@@ -10,30 +10,30 @@ export default function ProductsPage({ products }) {
         <>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
-                <title>Náhradní díly pro Mercedes Benz A třídy</title>
+                <title>Náhradní díly na vozy Škoda</title>
                 <meta
                     name="description"
-                    content="Objevte širokou nabídku kvalitních autodílů pro vozy Mercedes. Nabízíme motorové díly, prvky karoserie, elektrické součástky a další. Rychlá dodávka, skvělé ceny a spolehlivý servis. Vaše auto si zaslouží to nejlepší!"
+                    content="Objevte širokou nabídku kvalitních autodílů pro vozy Škoda. Nabízíme motorové díly, prvky karoserie, elektrické součástky a další. Rychlá dodávka, skvělé ceny a spolehlivý servis. Vaše auto si zaslouží to nejlepší!"
                 />
-                <link rel="canonical" href="https://www.nahradni-dily.com/mercedes-benz/A-Trida" />
+                <link rel="canonical" href="https://www.nahradni-dily.com/skoda" />
 
                 <link rel="apple-touch-icon" sizes="180x180" href="https://www.nahradni-dily.com/logo-nerozza.png" />
                 <meta property="og:locale" content="cs_CZ" />
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Originální náhradní díly pro Mercedes-Benz. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Mercedes-Benz." />
+                <meta property="og:title" content="Originální náhradní díly pro Škoda. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Škoda." />
                 <meta property="og:image" content="https://www.nahradni-dily.com/logo-nerozza.png" />
-                <meta property="og:image:alt" content="Náhradní díly pro Mercedes-Benz" />
+                <meta property="og:image:alt" content="Náhradní díly pro Škoda" />
                 <meta property="og:image:width" content="150" />
                 <meta property="og:image:height" content="150" />
                 <meta property="og:image:type" content="image/png" />
-                <meta property="og:description" content="Originální náhradní díly pro Mercedes-Benz. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Mercedes-Benz." />
+                <meta property="og:description" content="Originální náhradní díly pro Škoda. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Škoda." />
                 <meta property="og:url" content="https://www.nahradni-dily.com/" />
                 <meta property="og:site_name" content="nahradni-dily.com" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Originální náhradní díly pro Mercedes-Benz. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Mercedes-Benz." />
+                <meta name="twitter:title" content="Originální náhradní díly pro Škoda. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Škoda." />
                 <meta name="twitter:image" content="https://www.nahradni-dily.com/logo-nerozza.png" />
-                <meta name="twitter:image:alt" content="Náhradní díly pro Mercedes-Benz"></meta>
-                <meta name="twitter:description" content="Originální náhradní díly pro Mercedes-Benz. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Mercedes-Benz."></meta>
+                <meta name="twitter:image:alt" content="Náhradní díly pro Škoda"></meta>
+                <meta name="twitter:description" content="Originální náhradní díly pro Škoda. Kvalitní autodíly, spolehlivé a kompatibilní, pro váš vůz Škoda."></meta>
 
             </Head>
             <div className="dark:bg-slate-700">

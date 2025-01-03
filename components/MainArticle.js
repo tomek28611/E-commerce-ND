@@ -1,4 +1,4 @@
-export default function MercedesText() {
+export default function MainArticle() {
   return (
     <section className="bg-gray-300 text-gray-800 p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
       <h2 className="text-3xl font-bold text-center text-blue-900 mb-4">
@@ -58,6 +58,85 @@ export default function MercedesText() {
           <li>Očištění vozidla od sněhu a ledu před jízdou</li>
           <li>Nosení s sebou zimní výbavy (škrabka, rozmrazovač, sněhové řetězy)</li>
         </ul>
+      </p>
+         {/* Škoda Section */}
+         <h2 className="text-3xl font-bold text-center text-green-900 mt-8 mb-4">
+        Náhradní díly pro Škoda
+      </h2>
+      <p className="mb-4">
+        Škoda Auto je jedním z nejstarších výrobců automobilů na světě, založeným v roce 1895. Značka Škoda je známá svou spolehlivostí, dostupností a inovativními řešeními. Vozy této značky jsou oblíbené mezi českými i zahraničními řidiči díky vynikajícímu poměru cena/výkon.
+      </p>
+      <h3 className="text-2xl font-semibold text-green-700 mb-3">
+        Historie značky Škoda
+      </h3>
+      <p className="mb-4">
+        Historie Škody začíná ve městě Mladá Boleslav, kde Václav Laurin a Václav Klement zahájili výrobu bicyklů, motocyklů a následně automobilů. Po fúzi s plzeňským koncernem Škoda v roce 1925 získala značka větší kapacity a mohla expandovat.
+      </p>
+      <h3 className="text-2xl font-semibold text-green-700 mb-3">
+        Technologie a inovace
+      </h3>
+      <p className="mb-4">
+        Škoda je známá svou schopností přizpůsobit se moderním trendům. Nabízí řadu modelů od kompaktních aut jako Škoda Fabia až po SUV, například Škoda Kodiaq, s důrazem na bezpečnost a nízkou spotřebu paliva.
+      </p>
+
+      {/* BMW Section */}
+      <h2 className="text-3xl font-bold text-center text-blue-900 mt-8 mb-4">
+        Náhradní díly pro BMW
+      </h2>
+      <p className="mb-4">
+        BMW (Bayerische Motoren Werke) je německý výrobce luxusních automobilů a motocyklů, který je proslulý svou kvalitou, výkonem a elegancí. BMW se zaměřuje na výrobu sportovních vozů a inovativních elektrických modelů.
+      </p>
+      <h3 className="text-2xl font-semibold text-blue-700 mb-3">
+        Historie BMW
+      </h3>
+      <p className="mb-4">
+        BMW bylo založeno v roce 1916 a původně se zaměřovalo na výrobu leteckých motorů. Po první světové válce začalo vyrábět motocykly a nakonec osobní automobily, což značce přineslo světový úspěch.
+      </p>
+      <h3 className="text-2xl font-semibold text-blue-700 mb-3">
+        Inovace a styl
+      </h3>
+      <p className="mb-4">
+        BMW klade důraz na spojení luxusu a výkonu. Modely jako BMW řady 3, 5 a 7 jsou příkladem nadčasového designu a pokročilých technologií, včetně hybridních a elektrických pohonů.
+      </p>
+
+      {/* Audi Section */}
+      <h2 className="text-3xl font-bold text-center text-gray-900 mt-8 mb-4">
+        Náhradní díly pro Audi
+      </h2>
+      <p className="mb-4">
+        Audi je německá prémiová značka, která je známá svým elegantním designem a technickými inovacemi. Slogan Náskok díky technice dokonale vystihuje filozofii této značky.
+      </p>
+      <h3 className="text-2xl font-semibold text-gray-700 mb-3">
+        Historie značky Audi
+      </h3>
+      <p className="mb-4">
+        Audi bylo založeno v roce 1909 Augustem Horchem. Název pochází z latinského překladu jeho příjmení, které znamená slyšet. Audi se později stalo součástí skupiny Auto Union a později Volkswagen Group.
+      </p>
+      <h3 className="text-2xl font-semibold text-gray-700 mb-3">
+        Technologie a výkon
+      </h3>
+      <p className="mb-4">
+        Modely jako Audi A4, A6 nebo Q5 kombinují výkon a luxus, zatímco sportovní vozy Audi R8 jsou symbolem extrémní rychlosti a pokročilých technologií.
+      </p>
+
+      {/* Volkswagen Section */}
+      <h2 className="text-3xl font-bold text-center text-yellow-900 mt-8 mb-4">
+        Náhradní díly pro Volkswagen
+      </h2>
+      <p className="mb-4">
+        Volkswagen je jedním z největších výrobců automobilů na světě, známý svou spolehlivostí a přístupnými modely. Jeho modely jako Golf, Passat a Tiguan jsou oblíbené mezi rodinami i podnikateli.
+      </p>
+      <h3 className="text-2xl font-semibold text-yellow-700 mb-3">
+        Historie Volkswagenu
+      </h3>
+      <p className="mb-4">
+        Volkswagen vznikl v roce 1937 a jeho ikonický model Beetle se stal jedním z nejprodávanějších vozů všech dob. Značka se postupně rozrostla a nabízí širokou škálu vozidel od kompaktních po SUV.
+      </p>
+      <h3 className="text-2xl font-semibold text-yellow-700 mb-3">
+        Moderní technologie
+      </h3>
+      <p className="mb-4">
+        Volkswagen investuje do elektrifikace a autonomního řízení. Modely jako ID.3 a ID.4 jsou příklady inovací v oblasti elektromobilů.
       </p>
     </section>
   );

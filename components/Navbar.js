@@ -58,6 +58,10 @@ export default function Navbar({ toggleTheme, theme }) {
     setShowModels(prev => !prev);
   };
 
+  const closeModal = () => {
+    setShowModels(false);
+};
+
   return (
     <>
       {/* Navbar */}
@@ -67,7 +71,54 @@ export default function Navbar({ toggleTheme, theme }) {
             <Spinner />
           </div>
         )}
-        {showModels && (
+         {showModels && (
+                <div
+                    className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+                    onClick={closeModal}
+                >
+                    <div
+                        className="bg-gray-300 border rounded-2xl p-5 grid grid-cols-3 gap-4 relative max-w-4xl w-[90%] shadow-lg"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            className="absolute top-0 right-2 text-lg bg-transparent text-black border "
+                            onClick={closeModal}
+                        >
+                            zavřít
+                        </button>
+                        {/* <Link href="/nahradni-dily/mercedes/A-Trida">
+                            <div
+                                className="relative bg-cover bg-center h-28 w-full flex items-end justify-center text-white cursor-pointer"
+                                style={{ backgroundImage: "url(a.webp)" }}
+                            >
+                                <span className="absolute inset-x-0 bottom-0 bg-black bg-opacity-60 p-2 rounded-b-md">
+                                    Mercedes-Benz třídy A
+                                </span>
+                            </div>
+                        </Link> */}
+
+                        {sortedModels.map((model) => (
+                            <Link key={model.class} href={`https://www.nahradni-dily.com/mercedes-benz/${model.class}`}>
+                                <div
+                                    onClick={handleModelClick}
+                                    className="mt-2 mb-1 ml-2 relative p-6 border border-gray-600 rounded-lg text-center cursor-pointer transition-all duration-300 hover:brightness-75"
+                                    style={{
+                                        backgroundImage: `url(${model.image})`,
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'center',
+                                        height: '80px',
+                                    }}
+                                >
+                                    <h3 className="text-white text-sm">{model.class}</h3>
+                                    <p className="text-white text-xs">{` ${model.variants.join(", ")}`}</p>
+                                </div>
+                            </Link>
+                        ))}
+
+                    </div>
+                </div>
+            )}
+        {/* {showModels && (
           <aside id="logo-sidebar" className={` floating-aside fixed top-12 left-0 z-40 w-64 h-[calc(100vh-3rem)] overflow-y-auto transform transition-all duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
             } sm:translate-x-0`}
             aria-label="Sidebar"
@@ -99,7 +150,7 @@ export default function Navbar({ toggleTheme, theme }) {
               ))}
             </div>
           </aside>
-        )}
+        )} */}
 
         <div className="flex items-center justify-between p-4">
           <div className="text-2xl font-bold text-black dark:text-white">
@@ -138,9 +189,81 @@ export default function Navbar({ toggleTheme, theme }) {
                 <div className="text-black dark:text-white hover:text-blue-500">DÍL NA POŽADAVEK</div>
               </Link>
             </li>
-  
+
           </ul>
-          <div className="hidden md:flex items-center space-x-4">
+
+          {/* ------------------------ */}
+          <div className="hidden md:flex space-x-4">
+            <div>
+              
+              <h2 className="text-center"></h2>
+            </div>
+            <div
+              onClick={toggleModels}
+              className="cursor-pointer  bg-slate-200 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-10 h-10  flex flex-col justify-center items-center"
+            >
+              <img
+                src="./mercedes.png"
+                // className="w-14 h-14"
+                alt="Mercedes Logo"
+              />
+              <h2 className="text-white font-xs  md:font-semibold text-sm truncate">Mercedes</h2>
+            </div>
+
+
+            <div
+              onClick={() => router.push('/skoda')}
+              className="cursor-pointer  bg-slate-200 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-11 h-11 flex flex-col justify-center items-center"
+            >
+              <img
+                src="./skoda.png"
+                // className="w-18 h-18 "
+                alt="Mercedes Logo"
+              />
+              <h2 className="text-white  px-3  font-semibold text-sm truncate">Skoda</h2>
+            </div>
+
+            <div
+              onClick={() => router.push('/bmw')}
+              className="cursor-pointer  bg-slate-200 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-10 h-10  flex flex-col justify-center items-center"
+            >
+              <img
+                src="./bmw.png"
+                // className="w-14 h-14 md:w-18 md:h-18 mb-2"
+                alt="Mercedes Logo"
+              />
+              <h2 className="text-white  px-3  font-semibold text-sm truncate">BMW</h2>
+            </div>
+            <div
+              onClick={() => router.push('/audi')}
+              className="cursor-pointer  bg-slate-200 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-12 h-8 flex flex-col justify-center items-center"
+            >
+              <img
+                src="./audi.png"
+                // className="w-14 h-14 md:w-32 md:h-18 mb-2"
+                alt="Mercedes Logo"
+              />
+              <h2 className="text-white  px-6 mt-1  font-semibold text-sm truncate">Audi</h2>
+            </div>
+            <div
+              onClick={() => router.push('/volkswagen')}
+              className="cursor-pointer  bg-slate-200 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-10 h-10 flex flex-col justify-center items-center"
+            >
+              <img
+                src="./vw.png"
+                // className="w-14 h-14 md:w-18 md:h-18 mb-2"
+                alt="Mercedes Logo"
+              />
+              <h2 className="text-white  font-semibold text-sm truncate">Volkswagen</h2>
+            </div>
+            <button
+              onClick={toggleTheme}
+              className="p-2 bg-gray-200 dark:bg-gray-600 rounded-full hover:bg-gray-300 dark:hover:bg-gray-500"
+            >
+              {theme === "light" ? <FaMoon className="text-black" /> : <FaSun className="text-white" />}
+            </button>
+          </div>
+          {/* <div className="hidden md:flex items-center space-x-4">
             <div>
               <img src="/models.png" alt="car-model" className="models" onClick={toggleModels} />
             </div>
@@ -150,7 +273,7 @@ export default function Navbar({ toggleTheme, theme }) {
             >
               {theme === "light" ? <FaMoon className="text-black" /> : <FaSun className="text-white" />}
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* Menu mobilne */}
@@ -171,6 +294,77 @@ export default function Navbar({ toggleTheme, theme }) {
                 <div className="text-black dark:text-white hover:text-blue-500">Podpora</div>
               </Link>
             </li>
+
+            <div className="flex space-x-2">
+            <div>
+              
+              <h2 className="text-center"></h2>
+            </div>
+            <div
+              onClick={toggleModels}
+              className="cursor-pointer bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-10 h-10  flex flex-col justify-center items-center"
+            >
+              <img
+                src="./mercedes.png"
+                // className="w-14 h-14"
+                alt="Mercedes Logo"
+              />
+              <h2 className="text-white font-xs  md:font-semibold text-sm truncate">Mercedes</h2>
+            </div>
+
+
+            <div
+              onClick={() => router.push('/skoda')}
+              className="cursor-pointer  bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-11 h-11 flex flex-col justify-center items-center"
+            >
+              <img
+                src="./skoda.png"
+                // className="w-18 h-18 "
+                alt="Mercedes Logo"
+              />
+              <h2 className="text-white  px-3  font-semibold text-sm truncate">Skoda</h2>
+            </div>
+
+            <div
+              onClick={() => router.push('/bmw')}
+              className="cursor-pointer  bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-10 h-10  flex flex-col justify-center items-center"
+            >
+              <img
+                src="./bmw.png"
+                // className="w-14 h-14 md:w-18 md:h-18 mb-2"
+                alt="Mercedes Logo"
+              />
+              <h2 className="text-white  px-3  font-semibold text-sm truncate">BMW</h2>
+            </div>
+            <div
+              onClick={() => router.push('/audi')}
+              className="cursor-pointer  bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-12 h-8 flex flex-col justify-center items-center"
+            >
+              <img
+                src="./audi.png"
+                // className="w-14 h-14 md:w-32 md:h-18 mb-2"
+                alt="Mercedes Logo"
+              />
+              <h2 className="text-white  px-6 mt-1  font-semibold text-sm truncate">Audi</h2>
+            </div>
+            <div
+              onClick={() => router.push('/volkswagen')}
+              className="cursor-pointer  bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-10 h-10 flex flex-col justify-center items-center"
+            >
+              <img
+                src="./vw.png"
+                // className="w-14 h-14 md:w-18 md:h-18 mb-2"
+                alt="Mercedes Logo"
+              />
+              <h2 className="text-white  font-semibold text-sm truncate">Volkswagen</h2>
+            </div>
+            {/* <button
+              onClick={toggleTheme}
+              className="p-2 bg-gray-200 dark:bg-gray-600 rounded-full hover:bg-gray-300 dark:hover:bg-gray-500"
+            >
+              {theme === "light" ? <FaMoon className="text-black" /> : <FaSun className="text-white" />}
+            </button> */}
+          </div>
 
             <button
               onClick={toggleTheme}

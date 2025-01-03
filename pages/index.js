@@ -16,6 +16,7 @@ export default function HomePage({ featuredProduct, newProducts }) {
     }
   }, []);
 
+
   return (
     <div>
       <Head>
@@ -61,6 +62,22 @@ export default function HomePage({ featuredProduct, newProducts }) {
 export async function getServerSideProps() {
   const productIds = [
     '671a7784c165d4445e2f9bf5',
+    '676fe4779715e0acf0a3e8b3',
+    '676fe3bc9715e0acf0a3e89d',
+    '676e733c9715e0acf0a39999',
+    '676e78fb9715e0acf0a39aab',
+    '676e7b4e9715e0acf0a39b01',
+    '676e800e9715e0acf0a39f18',
+    '676e81c99715e0acf0a39f47',
+    '676a8eef9715e0acf0a2ca1c',
+    '676bdc8c9715e0acf0a3109b',
+    '676bdd769715e0acf0a310ba',
+    '676be1679715e0acf0a3111a',
+    '676bf4c19715e0acf0a313e0',
+    '676bfd9f9715e0acf0a31788',
+    '676c019f9715e0acf0a317ea',
+    '676c02ad9715e0acf0a3180a',
+    '676c055e9715e0acf0a31844',
     '671a944d6cf30d38d6cf823e',
     '671b9a46fae024421553c757',
     '67069cce9e750cdadf0fd9e4',

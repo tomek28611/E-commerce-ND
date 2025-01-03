@@ -148,6 +148,7 @@ export default function ProductDetails({ product }) {
       .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
 
+
   return (
     <>
       <Head>
@@ -210,7 +211,8 @@ export default function ProductDetails({ product }) {
           </div>
 
           <div className="space-y-4">
-            <h1 className="text-3xl font-bold text-gray-800 dark:text-white">{product.title}</h1>
+            <h1 className="text-3xl font-bold text-gray-800 dark:text-white">{product.title} </h1>
+            <h1 className="text-gray-400">ID: {product._id}</h1>
             <p className="text-gray-600 leading-6 dark:text-slate-300">{product.description}</p>
             <div className="text-2xl font-semibold text-indigo-600">
               {product.price} Kč

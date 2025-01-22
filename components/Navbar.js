@@ -202,24 +202,24 @@ export default function Navbar({ toggleTheme, theme }) {
               onClick={toggleModels}
               className="cursor-pointer  bg-slate-200 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-10 h-10  flex flex-col justify-center items-center"
             >
-              <img
+              {/* <img
                 src="./mercedes.png"
                 // className="w-14 h-14"
                 alt="Mercedes Logo"
-              />
-              <h2 className="text-white font-xs  md:font-semibold text-sm truncate">Mercedes</h2>
+              /> */}
+              <h2 className="text-white font-xs  md:font-semibold text-sm truncate mr-4">Mercedes</h2>
             </div>
 
 
             <div
               onClick={() => router.push('/skoda')}
-              className="cursor-pointer  bg-slate-200 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-11 h-11 flex flex-col justify-center items-center"
+              className="cursor-pointer  bg-slate-200 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-10 h-10 flex flex-col justify-center items-center"
             >
-              <img
+              {/* <img
                 src="./skoda.png"
                 // className="w-18 h-18 "
                 alt="Mercedes Logo"
-              />
+              /> */}
               <h2 className="text-white  px-3  font-semibold text-sm truncate">Skoda</h2>
             </div>
 
@@ -227,34 +227,34 @@ export default function Navbar({ toggleTheme, theme }) {
               onClick={() => router.push('/bmw')}
               className="cursor-pointer  bg-slate-200 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-10 h-10  flex flex-col justify-center items-center"
             >
-              <img
+              {/* <img
                 src="./bmw.png"
                 // className="w-14 h-14 md:w-18 md:h-18 mb-2"
                 alt="Mercedes Logo"
-              />
+              /> */}
               <h2 className="text-white  px-3  font-semibold text-sm truncate">BMW</h2>
             </div>
             <div
               onClick={() => router.push('/audi')}
-              className="cursor-pointer  bg-slate-200 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-12 h-8 flex flex-col justify-center items-center"
+              className="cursor-pointer  bg-slate-200 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-10 h-10 flex flex-col justify-center items-center"
             >
-              <img
+              {/* <img
                 src="./audi.png"
                 // className="w-14 h-14 md:w-32 md:h-18 mb-2"
                 alt="Mercedes Logo"
-              />
-              <h2 className="text-white  px-6 mt-1  font-semibold text-sm truncate">Audi</h2>
+              /> */}
+              <h2 className="text-white  px-3  font-semibold text-sm truncate mr-4">Audi</h2>
             </div>
             <div
               onClick={() => router.push('/volkswagen')}
               className="cursor-pointer  bg-slate-200 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center w-10 h-10 flex flex-col justify-center items-center"
             >
-              <img
+              {/* <img
                 src="./vw.png"
                 // className="w-14 h-14 md:w-18 md:h-18 mb-2"
                 alt="Mercedes Logo"
-              />
-              <h2 className="text-white  font-semibold text-sm truncate">Volkswagen</h2>
+              /> */}
+              <h2 className="text-white px-3 font-semibold text-sm truncate mr-">Volkswagen</h2>
             </div>
             <button
               onClick={toggleTheme}
